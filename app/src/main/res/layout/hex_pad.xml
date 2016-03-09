@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hexPad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/A"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/A" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/B"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/B" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/C"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/C" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/D"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/D" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/E"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/E" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/F"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/F" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/dec"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:tag="@string/decDesc"
+            android:text="@string/dec" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/bin"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:tag="@string/binDesc"
+            android:text="@string/bin" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/hex"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:tag="@string/hexDesc"
+            android:text="@string/hex" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pimp.calculator.view.SolidLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pad_operator_background_color"
+    android:paddingRight="20dip">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</com.pimp.calculator.view.SolidLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BackspaceImageButton">
+        <attr name="state_delete" format="boolean" />
+        <attr name="state_clear" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SolidLayout">
+        <attr name="preventParentTouchEvents" format="boolean" />
+        <attr name="preventChildTouchEvents" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/advancedPad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/sin"
+            style="@style/Theme.Calculator.ButtonStyle.Small"
+            android:hint="@string/arcsin"
+            android:text="@string/sin" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/cos"
+            style="@style/Theme.Calculator.ButtonStyle.Small"
+            android:hint="@string/arccos"
+            android:text="@string/cos" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/tan"
+            style="@style/Theme.Calculator.ButtonStyle.Small"
+            android:hint="@string/arctan"
+            android:text="@string/tan" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/i"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/i" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/ln"
+            style="@style/Theme.Calculator.ButtonStyle.Small"
+            android:text="@string/ln" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/lg"
+            style="@style/Theme.Calculator.ButtonStyle.Small"
+            android:text="@string/lg" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/pi"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/pi" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/e"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/e" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/percentage"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/percentage" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/factorial"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/factorial" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/sqrt"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:hint="@string/cbrt"
+            android:text="@string/sqrt" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/power"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/power" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/leftParen"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/leftParen" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/rightParen"
+            style="@style/Theme.Calculator.ButtonStyle"
+            android:text="@string/rightParen" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/X"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/X" />
+
+        <com.pimp.calculator.FloatingView.ColorButton
+            android:id="@+id/Y"
+            style="@style/Theme.Calculator.ButtonStyle.Digit"
+            android:text="@string/Y" />
+    </LinearLayout>
+</LinearLayout>

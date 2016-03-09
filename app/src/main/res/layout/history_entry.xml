@@ -1,0 +1,20 @@
+<com.pimp.calculator.FloatingView.HistoryLine xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <com.xlythe.engine.theme.ThemedTextView
+        android:id="@+id/historyExpr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/small_display_text_size" />
+
+    <com.xlythe.engine.theme.ThemedTextView
+        android:id="@+id/historyResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:textColor="@color/history_result"
+        android:textSize="@dimen/display_text_size" />
+</com.pimp.calculator.FloatingView.HistoryLine>

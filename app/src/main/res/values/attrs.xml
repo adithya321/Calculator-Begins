@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrollableDisplay">
+        <!-- Used to limit the height of Scrollable Display -->
+        <attr name="max_height" format="dimension" />
+    </declare-styleable>
+
+    <attr name="ate_key" format="string" />
+    <attr name="toolbar_popup_theme" format="reference" />
+</resources>

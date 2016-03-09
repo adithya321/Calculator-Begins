@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.pimp.calculator"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 21
+        versionName "2.9.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    wearApp project(':calculator2wear')
+    compile project(':math')
+    compile files('libs/slider.jar')
+
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.google.android.gms:play-services-analytics:8.4.0'
+    compile 'com.google.android.gms:play-services-appinvite:8.4.0'
+
+    compile('com.mikepenz:aboutlibraries:5.5.7@aar') {
+        transitive = true
+    }
+    compile 'com.github.Angtrim:Android-Five-Stars-Library:v3.1'
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1.original@aar'
+    compile('com.github.afollestad:app-theme-engine:1.0.0@aar') {
+        transitive = true
+    }
+    compile 'com.github.javiersantos:AppUpdater:2.0.2'
+    compile 'com.github.gabrielemariotti.changeloglib:changelog:2.0.0'
+    compile 'cat.ereza:customactivityoncrash:1.4.0'
+    compile 'com.anjlab.android.iab.v3:library:1.0.31'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.6@aar') {
+        transitive = true
+    }
+    compile('com.github.afollestad.material-dialogs:commons:0.8.5.6@aar') {
+        transitive = true
+    }
+    compile 'com.balysv:material-ripple:1.0.2'
+    compile('com.github.florent37:materialviewpager:1.1.2@aar') {
+        transitive = true
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

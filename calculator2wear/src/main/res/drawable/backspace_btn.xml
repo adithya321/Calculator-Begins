@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:backspace="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/clear"
+        android:drawable="@drawable/btn_clear"
+        backspace:state_clear="true" />
+    <item
+        android:id="@+id/delete"
+        android:drawable="@drawable/btn_delete" />
+
+    <transition
+        android:fromId="@id/delete"
+        android:reversible="true"
+        android:toId="@id/clear">
+        <animation-list>
+            <item
+                android:drawable="@drawable/backspace_0"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_1"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_2"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_3"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_4"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_5"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_6"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_7"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_8"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_9"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_10"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_11"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_12"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_13"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_14"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_15"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_16"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_17"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_18"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_19"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_20"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_21"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_22"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_23"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_24"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_25"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_26"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_27"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_28"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_29"
+                android:duration="10" />
+            <item
+                android:drawable="@drawable/backspace_30"
+                android:duration="10" />
+        </animation-list>
+    </transition>
+</animated-selector>

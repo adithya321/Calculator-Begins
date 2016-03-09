@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="max_digits">14</integer>
+    <item name="GRAPH" type="bool">true</item>
+    <item name="FUNCTION" type="bool">false</item>
+    <item name="HEX" type="bool">false</item>
+    <item name="BASIC" type="bool">true</item>
+    <item name="ADVANCED" type="bool">true</item>
+    <item name="MATRIX" type="bool">true</item>
+    <item name="RETURN_TO_BASIC" type="bool">false</item>
+    <item name="INFINITE_SCROLLING" type="bool">false</item>
+    <item name="CLICK_TO_OPEN_HISTORY" type="bool">true</item>
+    <item name="DIGIT_GROUPING" type="bool">true</item>
+    <item name="USE_RADIANS" type="bool">true</item>
+    <item name="SHOW_DETAILS" type="bool">true</item>
+    <item name="FLOATING_CALCULATOR" type="bool">false</item>
+    <item name="VIBRATE_ON_PRESS" type="bool">false</item>
+    <item name="SHOW_WIDGET_BACKGROUND" type="bool">false</item>
+</resources>

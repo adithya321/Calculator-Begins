@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.xlythe.engine.theme.ThemedRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:theme="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calculator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <FrameLayout
+        android:id="@+id/drawer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.xlythe.engine.theme.ThemedLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/min_display_height"
+                        android:orientation="horizontal"
+                        theme:themeBackground="@drawable/display_background">
+
+                        <com.pimp.calculator.FloatingView.CalculatorDisplay
+                            android:id="@+id/display"
+                            maxDigits="@integer/max_digits"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <com.pimp.calculator.FloatingView.ScrollableDisplay style="@style/Theme.Calculator.Display" />
+
+                            <com.pimp.calculator.FloatingView.ScrollableDisplay style="@style/Theme.Calculator.Display" />
+                        </com.pimp.calculator.FloatingView.CalculatorDisplay>
+                    </com.xlythe.engine.theme.ThemedLinearLayout>
+
+                    <com.xlythe.engine.theme.ThemedTextView
+                        android:id="@+id/details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/details_color"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.pimp.calculator.FloatingView.CalculatorViewPager
+                        android:id="@+id/panelswitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/history_bar_height" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3">
+
+                            <com.xlythe.slider.Slider
+                                android:id="@+id/pulldown"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <include layout="@layout/history_panel" />
+                            </com.xlythe.slider.Slider>
+                        </RelativeLayout>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/history_bar_height"
+                            android:layout_weight="1">
+                            <!-- marginRight has to be 0 to catch border-touch -->
+                            <com.pimp.calculator.FloatingView.ColorButton
+                                android:id="@+id/clear"
+                                style="@style/Theme.Calculator.ButtonStyle.Del"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="0dp"
+                                android:text="@string/clear"
+                                android:textSize="15sp" />
+                            <!-- marginRight has to be 0 to catch border-touch -->
+                            <com.pimp.calculator.FloatingView.ColorButton
+                                android:id="@+id/del"
+                                style="@style/Theme.Calculator.ButtonStyle.Del"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="0dp"
+                                android:text="@string/del"
+                                android:textSize="15sp" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/simple_cling"
+        layout="@layout/simple_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/matrix_cling"
+        layout="@layout/matrix_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/hex_cling"
+        layout="@layout/hex_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/graph_cling"
+        layout="@layout/graph_cling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</com.xlythe.engine.theme.ThemedRelativeLayout>

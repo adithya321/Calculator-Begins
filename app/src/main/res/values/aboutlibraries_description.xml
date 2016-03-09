@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="aboutLibraries_description_name">Calculator Begins</string>
+    <string name="aboutLibraries_description_showIcon">true</string>
+    <string name="aboutLibraries_description_showVersion">true</string>
+    <string name="aboutLibraries_description_text">
+        <![CDATA[Developed by <b>Adithya J</b> and <b>Satheesh P</b><br />Icons designed by <b>Shailesh</b><br />Made with {gmd-favorite} in <b>India.</b>]]>
+    </string>
+
+    <string name="aboutLibraries_description_special1_name">CHANGELOG</string>
+    <string name="aboutLibraries_description_special2_name">OTHER APPS</string>
+
+    <string name="define_license_none">none</string>
+    <string name="license_none_licenseName">No License</string>
+    <string name="license_none_licenseWebsite">Do what you want with this library.</string>
+    <string name="license_none_licenseShortDescription">
+        <![CDATA[
+        No License
+        <br /><br />
+        Copyright &#169; <<<YEAR>>>, <<<OWNER>>>
+        <br />
+        All rights reserved.
+        <br /><br />
+        Do what you want with this library.
+        ]]>
+    </string>
+    <string name="license_none_licenseDescription">
+        <![CDATA[
+        No License
+        <br /><br />
+        Copyright &#169; <<<YEAR>>>, <<<OWNER>>>
+        <br />
+        All rights reserved.
+        <br /><br />
+        Do what you want with this library.
+        ]]>
+    </string>
+
+
+    <string name="define_ATE">year;owner</string>
+    <string name="library_ATE_author">Aidan Follestad</string>
+    <string name="library_ATE_authorWebsite">http://aidanfollestad.com/</string>
+    <string name="library_ATE_libraryName">App Theme Engine</string>
+    <string name="library_ATE_libraryVersion">1.0.0</string>
+    <string name="library_ATE_libraryWebsite">https://github.com/afollestad/app-theme-engine</string>
+    <string name="library_ATE_licenseId">apache_2_0</string>
+    <string name="library_ATE_libraryDescription">
+        <![CDATA[
+            App Theme Engine is a library that makes it easy for developers to implement a theme system in their apps, similar to what\'s seen in Cabinet and Impression.
+        ]]>
+    </string>
+    <string name="library_ATE_isOpenSource">true</string>
+    <string name="library_ATE_repositoryLink">https://github.com/afollestad/app-theme-engine</string>
+    <string name="library_ATE_owner">Aidan Follestad</string>
+    <string name="library_ATE_year">2016</string>
+
+
+    <string name="define_FiveStars">year;owner</string>
+    <string name="library_FiveStars_author">Angelo Gallarello</string>
+    <string name="library_FiveStars_authorWebsite">http://www.angtrim.com</string>
+    <string name="library_FiveStars_libraryName">Android Five Stars</string>
+    <string name="library_FiveStars_libraryVersion">3.1</string>
+    <string name="library_FiveStars_libraryWebsite">https://github.com/Angtrim/Android-Five-Stars-Library</string>
+    <string name="library_FiveStars_licenseId">none</string>
+    <string name="library_FiveStars_libraryDescription">
+        <![CDATA[
+            Android Five Stars Library is a small library that helps developers add a "Rate My App" dialog to their applications.
+            It\'s called "Five Stars" because the dialog has a different behaviour based on the rating given by the user.
+        ]]>
+    </string>
+    <string name="library_FiveStars_isOpenSource">true</string>
+    <string name="library_FiveStars_repositoryLink">https://github.com/Angtrim/Android-Five-Stars-Library</string>
+    <string name="library_FiveStars_owner">Angelo Gallarello</string>
+    <string name="library_FiveStars_year">2015</string>
+
+
+    <string name="define_ChangeLog">year;owner</string>
+    <string name="library_ChangeLog_author">Gabriele Mariotti</string>
+    <string name="library_ChangeLog_authorWebsite">https://plus.google.com/u/0/+GabrieleMariotti</string>
+    <string name="library_ChangeLog_libraryName">ChangeLog</string>
+    <string name="library_ChangeLog_libraryVersion">2.0.0</string>
+    <string name="library_ChangeLog_libraryWebsite">https://github.com/gabrielemariotti/changeloglib</string>
+    <string name="library_ChangeLog_licenseId">apache_2_0</string>
+    <string name="library_ChangeLog_libraryDescription">
+        <![CDATA[
+            ChangeLog Library provides an easy way to display a change log in your Android app.
+        ]]>
+    </string>
+    <string name="library_ChangeLog_isOpenSource">true</string>
+    <string name="library_ChangeLog_repositoryLink">https://github.com/gabrielemariotti/changeloglib</string>
+    <string name="library_ChangeLog_owner">Gabriele Mariotti</string>
+    <string name="library_ChangeLog_year">2013&#8211;2015</string>
+
+
+    <string name="define_CustomCrash">year;owner</string>
+    <string name="library_CustomCrash_author">Eduard Ereza Martínez</string>
+    <string name="library_CustomCrash_authorWebsite">http://www.eduardereza.com/</string>
+    <string name="library_CustomCrash_libraryName">Custom Activity On Crash</string>
+    <string name="library_CustomCrash_libraryVersion">1.4.0</string>
+    <string name="library_CustomCrash_libraryWebsite">https://github.com/Ereza/CustomActivityOnCrash</string>
+    <string name="library_CustomCrash_licenseId">apache_2_0</string>
+    <string name="library_CustomCrash_libraryDescription">
+        <![CDATA[
+            This library allows launching a custom activity when the app crashes, instead of showing the hated "Unfortunately, X has stopped" dialog.<br /><br />
+            The bug image used in the default error activity is licensed under CC-BY by Riff: <a>https://www.sketchport.com/drawing/6119265933459456/lady-bug</a>
+        ]]>
+    </string>
+    <string name="library_CustomCrash_isOpenSource">true</string>
+    <string name="library_CustomCrash_repositoryLink">https://github.com/Ereza/CustomActivityOnCrash</string>
+    <string name="library_CustomCrash_owner">Eduard Ereza Martínez</string>
+    <string name="library_CustomCrash_year">2015</string>
+
+
+    <string name="define_MaterialRipple">year;owner</string>
+    <string name="library_MaterialRipple_author">Balys Valentukevicius</string>
+    <string name="library_MaterialRipple_authorWebsite">https://github.com/balysv</string>
+    <string name="library_MaterialRipple_libraryName">Material Ripple Layout</string>
+    <string name="library_MaterialRipple_libraryVersion">1.0.2</string>
+    <string name="library_MaterialRipple_libraryWebsite">https://github.com/balysv/material-ripple</string>
+    <string name="library_MaterialRipple_licenseId">apache_2_0</string>
+    <string name="library_MaterialRipple_libraryDescription">
+        <![CDATA[
+            Android L Ripple effect wrapper for Views
+        ]]>
+    </string>
+    <string name="library_MaterialRipple_isOpenSource">true</string>
+    <string name="library_MaterialRipple_repositoryLink">https://github.com/balysv/material-ripple</string>
+    <string name="library_MaterialRipple_owner">Balys Valentukevicius</string>
+    <string name="library_MaterialRipple_year">2015</string>
+
+
+    <string name="define_MaterialViewPager">year;owner</string>
+    <string name="library_MaterialViewPager_author">Florent Champigny</string>
+    <string name="library_MaterialViewPager_authorWebsite">http://florentchampigny.com/</string>
+    <string name="library_MaterialViewPager_libraryName">MaterialViewPager</string>
+    <string name="library_MaterialViewPager_libraryVersion">1.1.2</string>
+    <string name="library_MaterialViewPager_libraryWebsite">https://github.com/florent37/MaterialViewPager</string>
+    <string name="library_MaterialViewPager_licenseId">apache_2_0</string>
+    <string name="library_MaterialViewPager_libraryDescription">
+        <![CDATA[
+            A Material Design ViewPager easy to use library
+        ]]>
+    </string>
+    <string name="library_MaterialViewPager_isOpenSource">true</string>
+    <string name="library_MaterialViewPager_repositoryLink">https://github.com/florent37/MaterialViewPager</string>
+    <string name="library_MaterialViewPager_owner">florent37</string>
+    <string name="library_MaterialViewPager_year">2015</string>
+</resources>

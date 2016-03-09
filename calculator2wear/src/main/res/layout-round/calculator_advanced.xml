@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pimp.calculator.view.SolidPadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pad_advanced"
+    style="@style/PadLayoutStyle.Advanced"
+    android:background="@color/pad_operator_background_color"
+    android:paddingBottom="25dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <Button
+        android:id="@+id/const_pi"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_const_pi"
+        android:onClick="onButtonClick"
+        android:text="@string/const_pi" />
+
+    <Button
+        android:id="@+id/fun_percent"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/fun_percentage"
+        android:onClick="onButtonClick"
+        android:text="@string/fun_percentage" />
+
+    <Button
+        android:id="@+id/op_fact"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_op_fact"
+        android:onClick="onButtonClick"
+        android:text="@string/op_fact" />
+
+    <Button
+        android:id="@+id/op_sqrt"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_op_sqrt"
+        android:onClick="onButtonClick"
+        android:text="@string/op_sqrt" />
+
+    <Button
+        android:id="@+id/op_cbrt"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_op_cbrt"
+        android:onClick="onButtonClick"
+        android:text="@string/op_cbrt" />
+
+    <Button
+        android:id="@+id/op_pow"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_op_pow"
+        android:onClick="onButtonClick"
+        android:text="@string/op_pow" />
+
+    <Button
+        android:id="@+id/lparen"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_lparen"
+        android:onClick="onButtonClick"
+        android:text="@string/leftParen" />
+
+    <Button
+        android:id="@+id/rparen"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_rparen"
+        android:onClick="onButtonClick"
+        android:text="@string/rightParen" />
+
+    <Button
+        android:id="@+id/parentheses"
+        style="@style/PadButtonStyle.Wear.Advanced"
+        android:contentDescription="@string/desc_parentheses"
+        android:onClick="onButtonClick"
+        android:text="@string/parentheses" />
+
+</com.pimp.calculator.view.SolidPadLayout>

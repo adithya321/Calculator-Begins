@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Formatting">
+        <ListPreference
+            android:defaultValue="10"
+            android:entries="@array/number_decimals"
+            android:entryValues="@array/number_decimals"
+            android:key="number_decimals"
+            android:summary="Set the number of decimal places to be shown in result"
+            android:title="Number of Decimals" />
+
+        <ListPreference
+            android:defaultValue="None"
+            android:entries="@array/group_separators"
+            android:entryValues="@array/group_separators"
+            android:key="group_separator"
+            android:summary="Set the group separator to be shown in result"
+            android:title="Group Separator" />
+
+        <ListPreference
+            android:defaultValue="."
+            android:entries="@array/decimal_separators"
+            android:entryValues="@array/decimal_separators"
+            android:key="decimal_separator"
+            android:summary="Set the decimal separator to be shown in result"
+            android:title="Decimal Separator" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="format_key"
+            android:summary="Result will not be in scientific notation"
+            android:title="Apply Formatting" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

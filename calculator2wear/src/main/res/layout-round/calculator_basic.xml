@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pimp.calculator.view.SolidPadLayout
+        style="@style/PadLayoutStyle.Numeric"
+        android:background="@color/pad_numeric_background_color"
+        android:columnCount="3"
+        android:paddingBottom="25dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="5dp"
+        android:rowCount="4">
+
+        <Button
+            android:id="@+id/digit_7"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit7" />
+
+        <Button
+            android:id="@+id/digit_8"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit8" />
+
+        <Button
+            android:id="@+id/digit_9"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit9" />
+
+        <Button
+            android:id="@+id/digit_4"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit4" />
+
+        <Button
+            android:id="@+id/digit_5"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit5" />
+
+        <Button
+            android:id="@+id/digit_6"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit6" />
+
+        <Button
+            android:id="@+id/digit_1"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit1" />
+
+        <Button
+            android:id="@+id/digit_2"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit2" />
+
+        <Button
+            android:id="@+id/digit_3"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit3" />
+
+        <Button
+            android:id="@+id/dec_point"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/dec_point" />
+
+        <Button
+            android:id="@+id/digit_0"
+            style="@style/PadButtonStyle.Wear"
+            android:onClick="onButtonClick"
+            android:text="@string/digit0" />
+
+        <Button
+            android:id="@+id/eq"
+            style="@style/PadButtonStyle.Wear"
+            android:contentDescription="@string/desc_eq"
+            android:onClick="onButtonClick"
+            android:text="@string/eq" />
+
+    </com.pimp.calculator.view.SolidPadLayout>
+
+    <com.pimp.calculator.view.SolidPadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pad_operator"
+        style="@style/PadLayoutStyle.Operator"
+        android:background="@color/pad_operator_background_color"
+        android:columnCount="1"
+        android:paddingBottom="25dp"
+        android:paddingRight="20dp"
+        android:rowCount="4">
+
+        <Button
+            android:id="@+id/op_div"
+            style="@style/PadButtonStyle.Wear"
+            android:contentDescription="@string/desc_op_div"
+            android:onClick="onButtonClick"
+            android:text="@string/op_div" />
+
+        <Button
+            android:id="@+id/op_mul"
+            style="@style/PadButtonStyle.Wear"
+            android:contentDescription="@string/desc_op_mul"
+            android:onClick="onButtonClick"
+            android:text="@string/op_mul" />
+
+        <Button
+            android:id="@+id/op_sub"
+            style="@style/PadButtonStyle.Wear"
+            android:contentDescription="@string/desc_op_sub"
+            android:onClick="onButtonClick"
+            android:text="@string/op_sub" />
+
+        <Button
+            android:id="@+id/op_add"
+            style="@style/PadButtonStyle.Wear"
+            android:contentDescription="@string/desc_op_add"
+            android:onClick="onButtonClick"
+            android:text="@string/op_add" />
+
+    </com.pimp.calculator.view.SolidPadLayout>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pimp.calculator.FloatingView.Cling xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/all_apps_cling_title"
+                style="@style/ClingTitleText"
+                android:text="@string/cling_simple_title" />
+
+            <TextView
+                android:id="@+id/all_apps_cling_add_item"
+                style="@style/ClingText"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cling_simple_msg" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/cling_dismiss"
+        style="@style/ClingButton"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:onClick="dismissSimpleCling" />
+</com.pimp.calculator.FloatingView.Cling>

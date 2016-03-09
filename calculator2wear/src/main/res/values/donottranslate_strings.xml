@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Constant for Euler's number (i.e. "2.7182…"). [CHAR_LIMIT=1] -->
+    <string name="const_e">e</string>
+    <!-- Constant for pi (i.e. "3.1415…"). [CHAR_LIMIT=1] -->
+    <string name="const_pi">π</string>
+
+    <!-- Left parenthesis (e.g. "log(", "2 × (3 - 1)". [CHAR_LIMIT=1] -->
+    <string name="leftParen">(</string>
+    <!-- Right parenthesis (e.g. "log(2)", "(3 - 1) × 2". [CHAR_LIMIT=1] -->
+    <string name="rightParen">)</string>
+
+    <!-- Addition operator (e.g. "1 + 2"). [CHAR_LIMIT=1] -->
+    <string name="op_add">+</string>
+    <!-- Divide operator (e.g. "1 ÷ 2"). [CHAR_LIMIT=1] -->
+    <string name="op_div">÷</string>
+    <!-- Factorial operator (e.g. "2!"). [CHAR_LIMIT=1] -->
+    <string name="op_fact">!</string>
+    <!-- Multiply operator (e.g. "1 × 2"). [CHAR_LIMIT=1] -->
+    <string name="op_mul">×</string>
+    <!-- Power operator (e.g. "1 ^ 2"). [CHAR_LIMIT=1] -->
+    <string name="op_pow">^</string>
+    <!-- Square root operator (e.g. "√1"). [CHAR_LIMIT=1] -->
+    <string name="op_sqrt">√</string>
+    <!-- Subtraction operator (e.g. "1 - 2"). [CHAR_LIMIT=1] -->
+    <string name="op_sub">−</string>
+
+    <!-- Equals operator (e.g. "1 + 2 = ?"). [CHAR_LIMIT=1] -->
+    <string name="eq">=</string>
+    <!-- Result displayed when expression evaluates to infinity. [CHAR_LIMIT=1] -->
+    <string name="inf">∞</string>
+</resources>
