@@ -127,22 +127,4 @@
     <string name="library_MaterialRipple_repositoryLink">https://github.com/balysv/material-ripple</string>
     <string name="library_MaterialRipple_owner">Balys Valentukevicius</string>
     <string name="library_MaterialRipple_year">2015</string>
-
-
-    <string name="define_MaterialViewPager">year;owner</string>
-    <string name="library_MaterialViewPager_author">Florent Champigny</string>
-    <string name="library_MaterialViewPager_authorWebsite">http://florentchampigny.com/</string>
-    <string name="library_MaterialViewPager_libraryName">MaterialViewPager</string>
-    <string name="library_MaterialViewPager_libraryVersion">1.1.2</string>
-    <string name="library_MaterialViewPager_libraryWebsite">https://github.com/florent37/MaterialViewPager</string>
-    <string name="library_MaterialViewPager_licenseId">apache_2_0</string>
-    <string name="library_MaterialViewPager_libraryDescription">
-        <![CDATA[
-            A Material Design ViewPager easy to use library
-        ]]>
-    </string>
-    <string name="library_MaterialViewPager_isOpenSource">true</string>
-    <string name="library_MaterialViewPager_repositoryLink">https://github.com/florent37/MaterialViewPager</string>
-    <string name="library_MaterialViewPager_owner">florent37</string>
-    <string name="library_MaterialViewPager_year">2015</string>
 </resources>

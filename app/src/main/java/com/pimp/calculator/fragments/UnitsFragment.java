@@ -19,6 +19,9 @@ import java.math.BigDecimal;
 
 public class UnitsFragment extends Fragment {
 
+    public UnitsFragment() {
+    }
+
     public static android.support.v4.app.Fragment newInstance() {
         return new UnitsFragment();
     }

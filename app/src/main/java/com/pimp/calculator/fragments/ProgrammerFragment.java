@@ -10,6 +10,9 @@ import com.pimp.calculator.R;
 
 public class ProgrammerFragment extends Fragment {
 
+    public ProgrammerFragment() {
+    }
+
     public static Fragment newInstance() {
         return new ProgrammerFragment();
     }

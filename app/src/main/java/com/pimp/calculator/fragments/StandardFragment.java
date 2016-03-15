@@ -10,6 +10,10 @@ import com.pimp.calculator.R;
 
 public class StandardFragment extends Fragment {
 
+    public StandardFragment() {
+
+    }
+
     public static Fragment newInstance() {
         return new StandardFragment();
     }

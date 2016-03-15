@@ -24,6 +24,9 @@ import java.util.Locale;
 
 public class DateFragment extends Fragment {
 
+    public DateFragment() {
+    }
+
     public Calendar calendar;
     public TextView startDateView, endDateView, startTimeView, endTimeView;
     public int year_start, month_start, day_start, year_end, month_end, day_end;

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.github.florent37.materialviewpager.MaterialViewPager
-        android:id="@+id/materialViewPager"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:viewpager_animatedHeaderImage="false"
-        app:viewpager_disableToolbar="true"
-        app:viewpager_displayToolbarWhenSwipe="false"
-        app:viewpager_enableToolbarElevation="false"
-        app:viewpager_headerAdditionalHeight="1000dp"
-        app:viewpager_headerHeight="40dp"
-        app:viewpager_hideToolbarAndTitle="true" />
+        android:layout_height="wrap_content"
+        android:tag="background|accent_color,tab_indicator|secondary_text" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

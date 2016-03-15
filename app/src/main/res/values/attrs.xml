@@ -7,4 +7,7 @@
 
     <attr name="ate_key" format="string" />
     <attr name="toolbar_popup_theme" format="reference" />
+
+    <attr name="tab_icon_color" format="color" />
+    <attr name="tab_indicator_color" format="color" />
 </resources>

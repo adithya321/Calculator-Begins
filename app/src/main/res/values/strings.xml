@@ -126,7 +126,6 @@
     <string name="markup">markup+</string>
     <string name="discount">discount</string>
 
-    <string name="currency">Currency</string>
     <string name="currency_name">Name</string>
     <string name="rate">Rate</string>
     <string name="hint">Enter value</string>
@@ -462,4 +461,12 @@
     <string name="invitation_cta">Install!</string>
     <string name="invitation_subject">Try this great app!</string>
     <string name="send_failed">Sending invitations failed</string>
+
+    <string name="standard">STANDARD</string>
+    <string name="programmer">PROGRAMMER</string>
+    <string name="currency">CURRENCY</string>
+    <string name="converter">CONVERTER</string>
+    <string name="unit">UNIT</string>
+    <string name="date">DATE</string>
+    <string name="extras">EXTRAS</string>
 </resources>

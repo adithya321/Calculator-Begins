@@ -13,6 +13,9 @@ import com.pimp.calculator.R;
 
 public class ConverterFragment extends Fragment {
 
+    public ConverterFragment() {
+    }
+
     public static android.support.v4.app.Fragment newInstance() {
         return new ConverterFragment();
     }

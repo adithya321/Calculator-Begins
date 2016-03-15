@@ -69,7 +69,11 @@ public class MatrixEditText extends ThemedEditText implements OnFocusChangeListe
 
     @Override
     public String toString() {
-        return getText().toString();
+        try {
+            return getText().toString();
+        } catch (ClassCastException e) {
+            return "";
+        }
     }
 
     @Override

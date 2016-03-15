@@ -7,13 +7,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
@@ -37,8 +38,6 @@ import com.afollestad.appthemeengine.Config;
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.SkuDetails;
 import com.anjlab.android.iab.v3.TransactionDetails;
-import com.github.florent37.materialviewpager.MaterialViewPager;
-import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -47,12 +46,15 @@ import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.aboutlibraries.LibsConfiguration;
 import com.mikepenz.aboutlibraries.entity.Library;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.pimp.calculator.adapters.MainPagerAdapter;
 import com.pimp.calculator.fragments.ConverterFragment;
 import com.pimp.calculator.fragments.CurrencyFragment;
 import com.pimp.calculator.fragments.DateFragment;
+import com.pimp.calculator.fragments.ExtrasFragment;
 import com.pimp.calculator.fragments.PrefsFragment;
 import com.pimp.calculator.fragments.ProgrammerFragment;
-import com.pimp.calculator.fragments.SettingsFragment;
 import com.pimp.calculator.fragments.StandardFragment;
 import com.pimp.calculator.fragments.UnitsFragment;
 import com.pimp.calculator.math.Base;
@@ -61,6 +63,7 @@ import com.pimp.calculator.math.Solver;
 import com.pimp.calculator.util.AnalyticsApplication;
 import com.pimp.calculator.util.AutoResizeTextView;
 import com.pimp.calculator.util.CustomAdapter;
+import com.pimp.calculator.util.PagesBuilder;
 
 import org.javia.arity.SyntaxException;
 
@@ -277,7 +280,9 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         }
     };
     int REQUEST_INVITE = 0;
-    private MaterialViewPager mViewPager;
+    private TabLayout mTabs;
+    private PagesBuilder mPages;
+    private ViewPager mPager;
     private DbAdapter dbAdapter;
     private DataSource dataSource;
     private DataBaseHelper dataBaseHelper;
@@ -341,6 +346,12 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     public void onPurchaseHistoryRestored() {
     }
 
+    private void addTab(Drawable icon) {
+        assert mTabs != null;
+        TabLayout.Tab tab = mTabs.newTab().setIcon(icon);
+        mTabs.addTab(tab);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -348,21 +359,26 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         if (!ATE.config(this, "light_theme").isConfigured(4)) {
             ATE.config(this, "light_theme")
                     .activityTheme(R.style.AppTheme)
-                    .primaryColorRes(R.color.white)
-                    .accentColorRes(R.color.transparent)
-                    .textColorPrimaryRes(R.color.black)
-                    .textColorSecondaryRes(R.color.black)
+                    .primaryColorRes(R.color.colorPrimaryLightDefault)
+                    .accentColorRes(R.color.colorAccentDarkDefault)
+                    .textColorPrimaryRes(R.color.colorPrimaryDark)
+                    .textColorSecondaryRes(R.color.colorPrimaryLightDefault)
                     .commit();
         }
         if (!ATE.config(this, "dark_theme").isConfigured(4)) {
             ATE.config(this, "dark_theme")
                     .activityTheme(R.style.AppThemeDark)
                     .primaryColorRes(R.color.black)
-                    .accentColorRes(R.color.transparent)
+                    .accentColorRes(R.color.grey10)
                     .textColorPrimaryRes(R.color.white)
                     .textColorSecondaryRes(R.color.white)
                     .commit();
         }
+
+        primary_color = Config.primaryColor(this, getATEKey());
+        primary_text_color = Config.textColorPrimary(this, getATEKey());
+        sec_color = Config.accentColor(this, getATEKey());
+        sec_text_color = Config.textColorSecondary(this, getATEKey());
 
         setContentView(R.layout.activity_main);
 
@@ -374,7 +390,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 .setForceMode(false)
                 .setUpperBound(4)
                 .setNegativeReviewListener(this)
-                .showAfter(5);
+                .showAfter(10);
 
         AppUpdater appUpdater = new AppUpdater(this);
         appUpdater.start();
@@ -382,57 +398,28 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
 
-        mViewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
-        mViewPager.getViewPager().setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        mTabs = (TabLayout) findViewById(R.id.tabs);
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPages = new PagesBuilder(7);
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_home).color(sec_text_color), new StandardFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_laptop_mac).color(sec_text_color), new ProgrammerFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_monetization_on).color(sec_text_color), new CurrencyFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_swap_horiz).color(sec_text_color), new ConverterFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_swap_vert).color(sec_text_color), new UnitsFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_date_range).color(sec_text_color), new DateFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_settings).color(sec_text_color), new ExtrasFragment()));
+        mPager.setAdapter(new MainPagerAdapter(getSupportFragmentManager(), mPages));
+        mPager.setOffscreenPageLimit(mPages.size() - 1);
+        assert mTabs != null;
+        mTabs.setTabMode(TabLayout.MODE_FIXED);
+        mTabs.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mPager));
+        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabs) {
             @Override
-            public android.support.v4.app.Fragment getItem(int position) {
-                switch (position) {
-                    case 0:
-                        return StandardFragment.newInstance();
-                    case 1:
-                        return ProgrammerFragment.newInstance();
-                    case 2:
-                        return CurrencyFragment.newInstance();
-                    case 3:
-                        return ConverterFragment.newInstance();
-                    case 4:
-                        return UnitsFragment.newInstance();
-                    case 5:
-                        return DateFragment.newInstance();
-                    case 6:
-                        return SettingsFragment.newInstance();
-                    default:
-                        return StandardFragment.newInstance();
-                }
-            }
-
-            @Override
-            public int getCount() {
-                return 7;
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                switch (position) {
-                    case 0:
-                        return "Stan";
-                    case 1:
-                        return "Prog";
-                    case 2:
-                        return "Curr";
-                    case 3:
-                        return "Conv";
-                    case 4:
-                        return "Unit";
-                    case 5:
-                        return "Date";
-                    case 6:
-                        return "Extr";
-                }
-                return "";
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
             }
         });
-        mViewPager.getViewPager().addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             }
@@ -473,8 +460,10 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             public void onPageScrollStateChanged(int state) {
             }
         });
-        mViewPager.getViewPager().setOffscreenPageLimit(mViewPager.getViewPager().getAdapter().getCount());
-        mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
+
+        for (PagesBuilder.Page page : mPages)
+            addTab(page.iconRes);
+
 
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mPrefs.registerOnSharedPreferenceChangeListener(this);
@@ -497,21 +486,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             formatter.setDecimalFormatSymbols(symbols);
         }
 
-        primary_color = Config.primaryColor(this, getATEKey());
-        primary_text_color = Config.textColorPrimary(this, getATEKey());
-        sec_color = Config.accentColor(this, getATEKey());
-        sec_text_color = Config.textColorSecondary(this, getATEKey());
-
         flag = false;
-
-        mViewPager.getPagerTitleStrip().setIndicatorColor(sec_text_color);
-        mViewPager.getPagerTitleStrip().setTextColor(sec_text_color);
-        mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
-            @Override
-            public HeaderDesign getHeaderDesign(int page) {
-                return HeaderDesign.fromColorAndDrawable(sec_color, null);
-            }
-        });
 
         CustomActivityOnCrash.install(this);
     }
@@ -549,7 +524,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     }
 
     public void BtnClick(final View v) {
-        page_no = mViewPager.getViewPager().getCurrentItem();
+        page_no = mPager.getCurrentItem();
         unitSpinner = (Spinner) findViewById(R.id.units_spinner);
         switch (page_no) {
             case 0:

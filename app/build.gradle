@@ -8,8 +8,8 @@ android {
         applicationId "com.pimp.calculator"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 21
-        versionName "2.9.1"
+        versionCode 22
+        versionName "2.9.2"
     }
     buildTypes {
         release {
@@ -32,7 +32,9 @@ dependencies {
     compile project(':math')
     compile files('libs/slider.jar')
 
-    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+
     compile 'com.google.android.gms:play-services-analytics:8.4.0'
     compile 'com.google.android.gms:play-services-appinvite:8.4.0'
 
@@ -55,9 +57,6 @@ dependencies {
         transitive = true
     }
     compile 'com.balysv:material-ripple:1.0.2'
-    compile('com.github.florent37:materialviewpager:1.1.2@aar') {
-        transitive = true
-    }
 }
 
 apply plugin: 'com.google.gms.google-services'

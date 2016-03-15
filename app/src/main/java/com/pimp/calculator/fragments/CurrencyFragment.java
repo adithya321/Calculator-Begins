@@ -28,6 +28,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class CurrencyFragment extends Fragment {
 
+    public CurrencyFragment() {
+    }
+
     private final static String URL_WEB_SERVICE = "http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?";
     ConversionRate conversionRate;
     String strJson = "{\n" +
