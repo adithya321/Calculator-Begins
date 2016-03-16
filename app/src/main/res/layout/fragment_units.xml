@@ -3,15 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:animateLayoutChanges="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:tag="background|primary_color">
 
     <Spinner
         android:id="@+id/units_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:tag="tint|primary_color,tint_background|primary_color"
-        android:visibility="visible" />
+        android:layout_margin="16dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -50,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -74,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -97,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -120,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -143,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -166,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -189,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -212,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -235,7 +234,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -258,7 +257,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -281,7 +280,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -304,7 +303,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -327,7 +326,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -350,7 +349,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -373,7 +372,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -396,7 +395,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -419,7 +418,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -442,7 +441,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -465,7 +464,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:tag="text_color|secondary_text,background|accent_color"
+                android:tag="text_color|primary_text,background|primary_color"
                 android:text="Unit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 

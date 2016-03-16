@@ -237,7 +237,7 @@ public class CurrencyFragment extends Fragment {
         too = (Spinner) view.findViewById(R.id.too_spinner);
 
         ArrayAdapter<String> froAdapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.spinner_item, getResources().getStringArray(R.array.currency_exp));
+                R.layout.currency_spinner_item, getResources().getStringArray(R.array.currency_exp));
         froAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         fro.setAdapter(froAdapter);

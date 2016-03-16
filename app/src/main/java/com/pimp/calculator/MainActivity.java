@@ -53,7 +53,6 @@ import com.pimp.calculator.fragments.ConverterFragment;
 import com.pimp.calculator.fragments.CurrencyFragment;
 import com.pimp.calculator.fragments.DateFragment;
 import com.pimp.calculator.fragments.ExtrasFragment;
-import com.pimp.calculator.fragments.PrefsFragment;
 import com.pimp.calculator.fragments.ProgrammerFragment;
 import com.pimp.calculator.fragments.StandardFragment;
 import com.pimp.calculator.fragments.UnitsFragment;
@@ -64,6 +63,7 @@ import com.pimp.calculator.util.AnalyticsApplication;
 import com.pimp.calculator.util.AutoResizeTextView;
 import com.pimp.calculator.util.CustomAdapter;
 import com.pimp.calculator.util.PagesBuilder;
+import com.pimp.calculator.util.ZoomOutPageTransformer;
 
 import org.javia.arity.SyntaxException;
 
@@ -403,8 +403,8 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         mPages = new PagesBuilder(7);
         mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_home).color(sec_text_color), new StandardFragment()));
         mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_laptop_mac).color(sec_text_color), new ProgrammerFragment()));
-        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_monetization_on).color(sec_text_color), new CurrencyFragment()));
-        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_swap_horiz).color(sec_text_color), new ConverterFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_attach_money).color(sec_text_color), new CurrencyFragment()));
+        mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_compare_arrows).color(sec_text_color), new ConverterFragment()));
         mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_swap_vert).color(sec_text_color), new UnitsFragment()));
         mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_date_range).color(sec_text_color), new DateFragment()));
         mPages.add(new PagesBuilder.Page(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_settings).color(sec_text_color), new ExtrasFragment()));
@@ -460,7 +460,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             public void onPageScrollStateChanged(int state) {
             }
         });
-
+        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
         for (PagesBuilder.Page page : mPages)
             addTab(page.iconRes);
 
@@ -768,11 +768,8 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             case R.id.matgraph:
                 startActivity(new Intent(getApplicationContext(), Calculator.class).putExtra("MAIN", true));
                 break;
-            case R.id.theme:
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                break;
             case R.id.settings:
-                startActivity(new Intent(getApplicationContext(), PrefsFragment.class));
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
             case R.id.share:
                 Intent i = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
@@ -781,7 +778,14 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                         .build();
                 startActivityForResult(i, REQUEST_INVITE);
                 break;
+            case R.id.report:
+                Intent report = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://github.com/adithya321/Calculator-Begins/issues"));
+                startActivity(report);
+                break;
             case R.id.support:
+                Toast.makeText(MainActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+
                 final String SKU_COKE = "cb_coke", SKU_COFFEE = "cb_coffee", SKU_BURGER = "cb_burger",
                         SKU_PIZZA = "cb_pizza", SKU_MEAL = "cb_meal";
 
@@ -829,7 +833,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 new LibsBuilder()
                         .withLicenseShown(true)
                         .withVersionShown(true)
-                        .withActivityStyle(Libs.ActivityStyle.DARK)
                         .withAboutVersionShown(true)
                         .withActivityTitle(getString(R.string.app_name))
                         .withAboutIconShown(true)

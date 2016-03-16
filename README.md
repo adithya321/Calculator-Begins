@@ -15,7 +15,6 @@
 * [Custom Activity On Crash](https://github.com/Ereza/CustomActivityOnCrash)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Material Ripple Layout](https://github.com/balysv/material-ripple)
-* [MaterialViewPager](https://github.com/florent37/MaterialViewPager)
 
 ## License
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
+    android:maxLength="3"
     android:singleLine="true"
     android:tag="text_color|primary_text,background|primary_color"
     android:textAlignment="inherit" />

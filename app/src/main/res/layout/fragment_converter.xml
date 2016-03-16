@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:tag="background|primary_color">
 
     <Spinner
         android:id="@+id/units_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:layout_weight="0"
-        android:tag="tint|primary_color,tint_background|primary_color" />
+        android:layout_margin="16dp"
+        android:layout_weight="0" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,8 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:layout_weight="0"
-        android:tag="tint|primary_color,tint_background|primary_color" />
+        android:layout_weight="0" />
 
     <com.pimp.calculator.util.AutoResizeTextView
         android:id="@+id/conv_result_TV"
@@ -62,8 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:layout_weight="0"
-        android:tag="tint|primary_color,tint_background|primary_color" />
+        android:layout_weight="0" />
 
     <com.pimp.calculator.util.AutoResizeTextView
         android:id="@+id/conv_resultant_TV"
