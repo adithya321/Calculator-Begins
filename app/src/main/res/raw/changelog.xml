@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
-    <changelogversion changeDate="MAR 16, 2016" versionName="3.0.0">
+    <changelogversion changeDate="MAR 17, 2016" versionName="3.0.2">
         <changelogimprovement>Aidan Follestad's App Theme Engine</changelogimprovement>
         <changelogtext>Update to latest libraries</changelogtext>
         <changelogtext>Minor UI changes and Bug Fixes</changelogtext>

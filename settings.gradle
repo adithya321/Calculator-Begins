@@ -1,1 +1,1 @@
-include ':app', ':calculator2wear', ':math'
+include ':app', ':calculator2wear', ':math', ':ate'

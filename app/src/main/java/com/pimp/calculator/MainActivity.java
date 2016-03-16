@@ -36,7 +36,6 @@ import android.widget.Toast;
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.Config;
 import com.anjlab.android.iab.v3.BillingProcessor;
-import com.anjlab.android.iab.v3.SkuDetails;
 import com.anjlab.android.iab.v3.TransactionDetails;
 import com.github.javiersantos.appupdater.AppUpdater;
 import com.google.android.gms.analytics.HitBuilders;
@@ -793,13 +792,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 dialog.setContentView(R.layout.dialog_donate);
                 dialog.setTitle("Donate");
 
-                SkuDetails coke = bp.getPurchaseListingDetails(SKU_COKE);
+                /*SkuDetails coke = bp.getPurchaseListingDetails(SKU_COKE);
                 SkuDetails coffee = bp.getPurchaseListingDetails(SKU_COFFEE);
                 SkuDetails burger = bp.getPurchaseListingDetails(SKU_BURGER);
                 SkuDetails pizza = bp.getPurchaseListingDetails(SKU_PIZZA);
-                SkuDetails meal = bp.getPurchaseListingDetails(SKU_MEAL);
+                SkuDetails meal = bp.getPurchaseListingDetails(SKU_MEAL);*/
                 String[] title = {"Coke", "Coffee", "Burger", "Pizza", "Meal"};
-                String[] price = {coke.priceText, coffee.priceText, burger.priceText, pizza.priceText, meal.priceText};
+                String[] price = {"Rs. 10.00", "Rs. 50.00", "Rs. 100.00", "Rs. 500.00", "Rs. 1,000.00"};
 
 
                 ListView listView = (ListView) dialog.findViewById(R.id.list);
