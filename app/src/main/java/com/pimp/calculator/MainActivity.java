@@ -368,9 +368,9 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             ATE.config(this, "dark_theme")
                     .activityTheme(R.style.AppThemeDark)
                     .primaryColorRes(R.color.black)
-                    .accentColorRes(R.color.grey10)
-                    .textColorPrimaryRes(R.color.white)
-                    .textColorSecondaryRes(R.color.white)
+                    .accentColorRes(R.color.yellow700)
+                    .textColorPrimaryRes(R.color.yellow700)
+                    .textColorSecondaryRes(R.color.black)
                     .commit();
         }
 
@@ -637,8 +637,8 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 fav_List_LL = (LinearLayout) findViewById(R.id.conv_fav_layout);
                 favList = (ListView) findViewById(R.id.conv_fav_list);
                 favList.setEmptyView(findViewById(R.id.conv_empty_fav));
-                hyBtn = (Button) findViewById(R.id.pro_history_Btn);
-                myBtn = (Button) findViewById(R.id.pro_M_Btn);
+                //hyBtn = (Button) findViewById(R.id.pro_history_Btn);
+                //myBtn = (Button) findViewById(R.id.pro_M_Btn);
                 favBtn = (Button) findViewById(R.id.conv_fav_Btn);
                 break;
             case 2:
@@ -710,7 +710,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createFav();
                 break;
             case R.id.sci_history_Btn:
-            case R.id.pro_history_Btn:
+            //case R.id.pro_history_Btn:
             case R.id.conv_history_Btn:
             case R.id.curr_history_Btn:
                 dbAdapter = new DbAdapter(this);
@@ -877,7 +877,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createMemory();
                 break;
             case R.id.sci_M_Btn:
-            case R.id.pro_M_Btn:
+            //case R.id.pro_M_Btn:
             case R.id.curr_M_Btn:
             case R.id.conv_M_Btn:
                 dbAdapter = new DbAdapter(this);

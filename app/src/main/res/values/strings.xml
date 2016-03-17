@@ -3,7 +3,7 @@
 
     <string name="action_history">History</string>
     <string name="action_refresh">Refresh</string>
-    <string name="action_fav">Add to Favourites</string>
+    <string name="action_fav">ADD TO FAVOURITES</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_help">Help</string>
@@ -18,7 +18,7 @@
     <string name="Mminus">M-</string>
     <string name="MS">MS</string>
     <string name="M">MY</string>
-    <string name="HIS">HY</string>
+    <string name="HIS">HIS</string>
 
     <string name="no_memory">No Memory Yet!</string>
     <string name="no_history">No History Yet!</string>
@@ -60,13 +60,13 @@
     <string name="XOR">XOR</string>
     <string name="NOT">NOT</string>
 
-    <string name="functions">Fun</string>
-    <string name="constants">Con</string>
+    <string name="functions">FUNC</string>
+    <string name="constants">CONST</string>
     <string name="memory">Mem.</string>
     <string name="ascii">ASCII</string>
-    <string name="favourites">Favs</string>
+    <string name="favourites">FAVS</string>
     <string name="rates">Rates</string>
-    <string name="swap">Swap</string>
+    <string name="swap">SWAP</string>
 
     <string name="deg">DEG</string>
     <string name="rad">RAD</string>

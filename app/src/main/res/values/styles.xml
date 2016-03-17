@@ -9,7 +9,7 @@
 
     <style name="MyActionBarTheme" parent="ThemeOverlay.AppCompat.Dark" />
 
-    <style name="Theme.Calculator" parent="Theme.AppCompat">
+    <style name="Theme.Calculator" parent="android:Theme.Holo.NoActionBar">
         <item name="android:windowBackground">@drawable/background</item>
     </style>
 
