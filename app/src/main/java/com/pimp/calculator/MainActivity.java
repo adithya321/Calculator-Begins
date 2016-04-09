@@ -2,6 +2,7 @@ package com.pimp.calculator;
 
 import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.TabLayout;
@@ -286,7 +288,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     private DataSource dataSource;
     private DataBaseHelper dataBaseHelper;
     private SharedPreferences mPrefs;
-    private boolean format_bool;
+    private boolean format_bool, vibrate;
     private String num_deci;
     private String group_separator;
     private String decimal_separator;
@@ -368,9 +370,9 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             ATE.config(this, "dark_theme")
                     .activityTheme(R.style.AppThemeDark)
                     .primaryColorRes(R.color.black)
-                    .accentColorRes(R.color.yellow700)
-                    .textColorPrimaryRes(R.color.yellow700)
-                    .textColorSecondaryRes(R.color.black)
+                    .accentColorRes(R.color.grey20)
+                    .textColorPrimaryRes(R.color.white)
+                    .textColorSecondaryRes(R.color.white)
                     .commit();
         }
 
@@ -484,7 +486,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             }
             formatter.setDecimalFormatSymbols(symbols);
         }
-
+        vibrate = mPrefs.getBoolean("vibrate", true);
         flag = false;
 
         CustomActivityOnCrash.install(this);
@@ -523,6 +525,10 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     }
 
     public void BtnClick(final View v) {
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (vibrate)
+            vibrator.vibrate(30);
+
         page_no = mPager.getCurrentItem();
         unitSpinner = (Spinner) findViewById(R.id.units_spinner);
         switch (page_no) {
@@ -710,7 +716,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createFav();
                 break;
             case R.id.sci_history_Btn:
-            //case R.id.pro_history_Btn:
+                //case R.id.pro_history_Btn:
             case R.id.conv_history_Btn:
             case R.id.curr_history_Btn:
                 dbAdapter = new DbAdapter(this);
@@ -877,7 +883,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createMemory();
                 break;
             case R.id.sci_M_Btn:
-            //case R.id.pro_M_Btn:
+                //case R.id.pro_M_Btn:
             case R.id.curr_M_Btn:
             case R.id.conv_M_Btn:
                 dbAdapter = new DbAdapter(this);
@@ -1938,6 +1944,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             }
             formatter.setDecimalFormatSymbols(symbols);
         }
+        vibrate = mPrefs.getBoolean("vibrate", true);
     }
 
     @Override
