@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
 
     defaultConfig {
         applicationId "com.pimp.calculator"
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 27
-        versionName "3.0.4"
+        targetSdkVersion 24
+        versionCode 28
+        versionName "3.0.5"
     }
     buildTypes {
         release {
@@ -33,11 +33,11 @@ dependencies {
     compile project(':ate')
     compile files('libs/slider.jar')
 
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
 
-    compile 'com.google.android.gms:play-services-analytics:8.4.0'
-    compile 'com.google.android.gms:play-services-appinvite:8.4.0'
+    compile 'com.google.android.gms:play-services-analytics:9.2.0'
+    compile 'com.google.android.gms:play-services-appinvite:9.2.0'
 
     compile('com.mikepenz:aboutlibraries:5.5.7@aar') {
         transitive = true

@@ -61,7 +61,7 @@ public class MatrixEditText extends ThemedEditText implements OnFocusChangeListe
     public void onFocusChange(View v, boolean hasFocus) {
         if (hasFocus) {
             mDisplay.mActiveEditText = MatrixEditText.this;
-            if (getText().toString().equals(Logic.NAN)) {
+            if (toString().equals(Logic.NAN)) {
                 setText("");
             }
         }
