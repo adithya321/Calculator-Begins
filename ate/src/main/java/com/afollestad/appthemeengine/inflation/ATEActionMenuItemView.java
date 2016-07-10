@@ -21,25 +21,22 @@ import java.lang.reflect.Field;
  */
 class ATEActionMenuItemView extends ActionMenuItemView implements ViewInterface {
 
-    public ATEActionMenuItemView(Context context) {
-        super(context);
-        init(context, null);
-    }
-
-    public ATEActionMenuItemView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, null);
-    }
-
-    public ATEActionMenuItemView(Context context, AttributeSet attrs, @Nullable ATEActivity keyContext) {
-        super(context, attrs);
-        init(context, keyContext);
-    }
-
     private String mKey;
     private int mTintColor;
     private Drawable mIcon;
     private boolean mCheckedActionView;
+    public ATEActionMenuItemView(Context context) {
+        super(context);
+        init(context, null);
+    }
+    public ATEActionMenuItemView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, null);
+    }
+    public ATEActionMenuItemView(Context context, AttributeSet attrs, @Nullable ATEActivity keyContext) {
+        super(context, attrs);
+        init(context, keyContext);
+    }
 
     private void init(Context context, @Nullable ATEActivity keyContext) {
         if (keyContext == null && context instanceof ATEActivity)

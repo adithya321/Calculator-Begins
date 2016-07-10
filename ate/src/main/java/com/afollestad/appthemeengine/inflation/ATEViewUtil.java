@@ -12,6 +12,9 @@ import com.afollestad.appthemeengine.ATEActivity;
  */
 class ATEViewUtil {
 
+    private ATEViewUtil() {
+    }
+
     public static String init(@Nullable ATEActivity keyContext, View view, Context context) {
         if (keyContext == null && context instanceof ATEActivity)
             keyContext = (ATEActivity) context;
@@ -20,8 +23,5 @@ class ATEViewUtil {
             key = keyContext.getATEKey();
         ATE.themeView(context, view, key);
         return key;
-    }
-
-    private ATEViewUtil() {
     }
 }

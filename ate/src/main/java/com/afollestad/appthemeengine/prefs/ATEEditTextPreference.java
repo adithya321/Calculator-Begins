@@ -14,6 +14,8 @@ import com.afollestad.materialdialogs.prefs.MaterialEditTextPreference;
  */
 public class ATEEditTextPreference extends MaterialEditTextPreference {
 
+    private String mKey;
+
     public ATEEditTextPreference(Context context) {
         super(context);
         init(context, null);
@@ -33,8 +35,6 @@ public class ATEEditTextPreference extends MaterialEditTextPreference {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

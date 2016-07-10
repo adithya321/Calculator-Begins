@@ -15,6 +15,9 @@ public final class MDUtil {
 
     public static final String MAIN_CLASS = "com.afollestad.materialdialogs.MaterialDialog";
 
+    private MDUtil() {
+    }
+
     public static void initMdSupport(@NonNull Context context, @Nullable String key) {
         final ThemeSingleton md = ThemeSingleton.get();
         md.titleColor = Config.textColorPrimary(context, key);
@@ -25,8 +28,5 @@ public final class MDUtil {
         md.positiveColor = ColorStateList.valueOf(md.widgetColor);
         md.neutralColor = ColorStateList.valueOf(md.widgetColor);
         md.negativeColor = ColorStateList.valueOf(md.widgetColor);
-    }
-
-    private MDUtil() {
     }
 }

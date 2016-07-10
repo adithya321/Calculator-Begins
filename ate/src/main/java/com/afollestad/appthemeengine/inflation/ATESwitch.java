@@ -9,8 +9,6 @@ import android.view.View;
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.ATEActivity;
 import com.afollestad.appthemeengine.tagprocessors.ATEDefaultTags;
-import com.afollestad.appthemeengine.tagprocessors.TextColorTagProcessor;
-import com.afollestad.appthemeengine.tagprocessors.TintTagProcessor;
 
 /**
  * @author Aidan Follestad (afollestad)

@@ -8,11 +8,11 @@ import android.view.View;
  */
 public final class ViewPagerUtil {
 
+    private ViewPagerUtil() {
+    }
+
     // External class is used after checking if ViewPager is on the class path. Avoids compile errors.
     public static boolean isViewPager(View view) {
         return view instanceof ViewPager;
-    }
-
-    private ViewPagerUtil() {
     }
 }

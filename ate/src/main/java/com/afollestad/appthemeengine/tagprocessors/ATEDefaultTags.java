@@ -28,6 +28,9 @@ public final class ATEDefaultTags {
 
     // TODO toolbars should use default tags instead of forcing toolbarColor()?
 
+    private ATEDefaultTags() {
+    }
+
     public static void process(View view) {
         final HashMap<String, String> mDefaults = get(view);
         if (mDefaults == null || (view.getTag() != null && !(view.getTag() instanceof String)))
@@ -136,8 +139,5 @@ public final class ATEDefaultTags {
         map.put(TabLayoutTagProcessor.TEXT_PREFIX, "parent_dependent");
         map.put(TabLayoutTagProcessor.INDICATOR_PREFIX, "accent_color");
         return map;
-    }
-
-    private ATEDefaultTags() {
     }
 }

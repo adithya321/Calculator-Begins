@@ -16,6 +16,8 @@ import com.afollestad.appthemeengine.R;
  */
 public class ATEPreference extends Preference {
 
+    private String mKey;
+
     public ATEPreference(Context context) {
         super(context);
         init(context, null);
@@ -36,8 +38,6 @@ public class ATEPreference extends Preference {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

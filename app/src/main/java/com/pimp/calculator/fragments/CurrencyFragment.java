@@ -28,9 +28,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class CurrencyFragment extends Fragment {
 
-    public CurrencyFragment() {
-    }
-
     private final static String URL_WEB_SERVICE = "http://www.webservicex.net/CurrencyConvertor.asmx/ConversionRate?";
     ConversionRate conversionRate;
     String strJson = "{\n" +
@@ -214,6 +211,8 @@ public class CurrencyFragment extends Fragment {
             "}";
     private AutoResizeTextView result_TV, resultant_TV;
     private Spinner fro, too;
+    public CurrencyFragment() {
+    }
 
     public static android.support.v4.app.Fragment newInstance() {
         return new CurrencyFragment();

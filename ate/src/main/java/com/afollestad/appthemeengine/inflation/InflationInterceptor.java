@@ -30,29 +30,16 @@ import java.lang.reflect.Method;
 public final class InflationInterceptor implements LayoutInflaterFactory {
 
     private static final boolean LOGGING_ENABLED = true;
-
-    private static void LOG(String msg, Object... args) {
-        //noinspection PointlessBooleanExpression
-        if (!LOGGING_ENABLED)
-            return;
-        if (args != null) {
-            Log.d("InflationInterceptor", String.format(msg, args));
-        } else {
-            Log.d("InflationInterceptor", msg);
-        }
-    }
-
+    private static Method mOnCreateViewMethod;
+    private static Method mCreateViewMethod;
+    private static Field mConstructorArgsField;
+    private static int[] ATTRS_THEME;
     @Nullable
     private final ATEActivity mKeyContext;
     @NonNull
     private final LayoutInflater mLi;
     @Nullable
     private AppCompatDelegate mDelegate;
-    private static Method mOnCreateViewMethod;
-    private static Method mCreateViewMethod;
-    private static Field mConstructorArgsField;
-    private static int[] ATTRS_THEME;
-
     public InflationInterceptor(@Nullable Activity keyContext, @NonNull LayoutInflater li, @Nullable AppCompatDelegate delegate) {
         if (keyContext instanceof ATEActivity)
             mKeyContext = (ATEActivity) keyContext;
@@ -96,6 +83,17 @@ public final class InflationInterceptor implements LayoutInflaterFactory {
         mOnCreateViewMethod.setAccessible(true);
         mCreateViewMethod.setAccessible(true);
         mConstructorArgsField.setAccessible(true);
+    }
+
+    private static void LOG(String msg, Object... args) {
+        //noinspection PointlessBooleanExpression
+        if (!LOGGING_ENABLED)
+            return;
+        if (args != null) {
+            Log.d("InflationInterceptor", String.format(msg, args));
+        } else {
+            Log.d("InflationInterceptor", msg);
+        }
     }
 
     private boolean isBlackListedForApply(String name) {

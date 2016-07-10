@@ -8,11 +8,11 @@ import android.view.View;
  */
 public final class RecyclerViewUtil {
 
+    private RecyclerViewUtil() {
+    }
+
     // External class is used after checking if RecyclerView is on the class path. Avoids compile errors.
     public static boolean isRecyclerView(View view) {
         return view instanceof RecyclerView;
-    }
-
-    private RecyclerViewUtil() {
     }
 }

@@ -31,7 +31,7 @@ import java.util.HashMap;
 class ATEBase {
 
     protected final static String DEFAULT_PROCESSOR = "[default]";
-
+    protected static Class<?> didPreApply = null;
     private static HashMap<String, ViewProcessor> mViewProcessors;
     private static HashMap<String, TagProcessor> mTagProcessors;
 
@@ -107,6 +107,4 @@ class ATEBase {
             initTagProcessors();
         mTagProcessors.put(prefix, tagProcessor);
     }
-
-    protected static Class<?> didPreApply = null;
 }

@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 
 import com.afollestad.appthemeengine.ATEActivity;
 import com.afollestad.appthemeengine.tagprocessors.ATEDefaultTags;
-import com.afollestad.appthemeengine.viewprocessors.DefaultProcessor;
 
 /**
  * @author Aidan Follestad (afollestad)

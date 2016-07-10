@@ -18,41 +18,18 @@ import com.afollestad.appthemeengine.util.ATEUtil;
  */
 public abstract class TagProcessor {
 
+    private static final String PRIMARY_COLOR = "primary_color";
+    private static final String PRIMARY_COLOR_DARK = "primary_color_dark";
+    private static final String ACCENT_COLOR = "accent_color";
+    private static final String PRIMARY_TEXT_COLOR = "primary_text";
+    private static final String PRIMARY_TEXT_COLOR_INVERSE = "primary_text_inverse";
+    private static final String SECONDARY_TEXT_COLOR = "secondary_text";
+    private static final String SECONDARY_TEXT_COLOR_INVERSE = "secondary_text_inverse";
+    private static final String PARENT_DEPENDENT = "parent_dependent";
+    private static final String PRIMARY_COLOR_DEPENDENT = "primary_color_dependent";
+    private static final String ACCENT_COLOR_DEPENDENT = "accent_color_dependent";
+    private static final String WINDOW_BG_DEPENDENT = "window_bg_dependent";
     public TagProcessor() {
-    }
-
-    public static class ColorResult {
-
-        private int mColor;
-        private boolean mDependent;
-        private boolean mDark;
-
-        public ColorResult(@ColorInt int color, boolean dependent, boolean dark) {
-            mColor = color;
-            mDependent = dependent;
-            mDark = dark;
-        }
-
-        public int getColor() {
-            return mColor;
-        }
-
-        public boolean isDependent() {
-            return mDependent;
-        }
-
-        public boolean isDark(Context context) {
-            if (!mDependent) {
-                // mDark wasn't loaded, determine from window background instead.
-                final int windowBg = ATEUtil.resolveColor(context, android.R.attr.windowBackground);
-                mDark = !ATEUtil.isColorLight(windowBg);
-            }
-            return mDark;
-        }
-
-        public void adjustAlpha(float factor) {
-            mColor = ATEUtil.adjustAlpha(mColor, factor);
-        }
     }
 
     /**
@@ -147,17 +124,37 @@ public abstract class TagProcessor {
 
     public abstract void process(@NonNull Context context, @Nullable String key, @NonNull View view, @NonNull String suffix);
 
+    public static class ColorResult {
 
-    private static final String PRIMARY_COLOR = "primary_color";
-    private static final String PRIMARY_COLOR_DARK = "primary_color_dark";
-    private static final String ACCENT_COLOR = "accent_color";
-    private static final String PRIMARY_TEXT_COLOR = "primary_text";
-    private static final String PRIMARY_TEXT_COLOR_INVERSE = "primary_text_inverse";
-    private static final String SECONDARY_TEXT_COLOR = "secondary_text";
-    private static final String SECONDARY_TEXT_COLOR_INVERSE = "secondary_text_inverse";
+        private int mColor;
+        private boolean mDependent;
+        private boolean mDark;
 
-    private static final String PARENT_DEPENDENT = "parent_dependent";
-    private static final String PRIMARY_COLOR_DEPENDENT = "primary_color_dependent";
-    private static final String ACCENT_COLOR_DEPENDENT = "accent_color_dependent";
-    private static final String WINDOW_BG_DEPENDENT = "window_bg_dependent";
+        public ColorResult(@ColorInt int color, boolean dependent, boolean dark) {
+            mColor = color;
+            mDependent = dependent;
+            mDark = dark;
+        }
+
+        public int getColor() {
+            return mColor;
+        }
+
+        public boolean isDependent() {
+            return mDependent;
+        }
+
+        public boolean isDark(Context context) {
+            if (!mDependent) {
+                // mDark wasn't loaded, determine from window background instead.
+                final int windowBg = ATEUtil.resolveColor(context, android.R.attr.windowBackground);
+                mDark = !ATEUtil.isColorLight(windowBg);
+            }
+            return mDark;
+        }
+
+        public void adjustAlpha(float factor) {
+            mColor = ATEUtil.adjustAlpha(mColor, factor);
+        }
+    }
 }

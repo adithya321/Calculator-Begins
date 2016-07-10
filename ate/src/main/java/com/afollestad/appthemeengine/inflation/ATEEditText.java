@@ -14,6 +14,9 @@ import com.afollestad.appthemeengine.tagprocessors.ATEDefaultTags;
  */
 class ATEEditText extends EditText implements ViewInterface, PostInflationApplier {
 
+    private boolean mWaitForInflate;
+    private ATEActivity mKeyContext;
+
     public ATEEditText(Context context) {
         super(context);
         init(context, null);
@@ -23,15 +26,11 @@ class ATEEditText extends EditText implements ViewInterface, PostInflationApplie
         super(context, attrs);
         init(context, null);
     }
-
     public ATEEditText(Context context, AttributeSet attrs, @Nullable ATEActivity keyContext, boolean waitForInflate) {
         super(context, attrs);
         mWaitForInflate = waitForInflate;
         init(context, keyContext);
     }
-
-    private boolean mWaitForInflate;
-    private ATEActivity mKeyContext;
 
     private void init(Context context, @Nullable ATEActivity keyContext) {
         ATEDefaultTags.process(this);

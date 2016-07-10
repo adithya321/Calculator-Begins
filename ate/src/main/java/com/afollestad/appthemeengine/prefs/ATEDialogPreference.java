@@ -14,6 +14,8 @@ import com.afollestad.materialdialogs.prefs.MaterialDialogPreference;
  */
 public class ATEDialogPreference extends MaterialDialogPreference {
 
+    private String mKey;
+
     public ATEDialogPreference(Context context) {
         super(context);
         init(context, null);
@@ -33,8 +35,6 @@ public class ATEDialogPreference extends MaterialDialogPreference {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

@@ -119,16 +119,14 @@ public class ToolbarProcessor implements ViewProcessor<Toolbar, Menu> {
 
     public static class ScrimsOffsetListener implements AppBarLayout.OnOffsetChangedListener {
 
-        private Object mCollapsingTextHelper;
-
         private final Field mExpandedTextColorField;
         private final Field mCollapsedTextColorField;
         private final Field mLastInsetsField;
-
         @NonNull
         private final Context mContext;
-        private Toolbar mToolbar;
         private final CollapsingToolbarLayout mCollapsingToolbar;
+        private Object mCollapsingTextHelper;
+        private Toolbar mToolbar;
         private Menu mMenu;
         private AppCompatImageView mOverflowView;
 
@@ -186,6 +184,57 @@ public class ToolbarProcessor implements ViewProcessor<Toolbar, Menu> {
                     invalidateMenu();
                 }
             });
+        }
+
+        // Some things done within this method might look weird, but they are all needed.
+        @SuppressWarnings("unchecked")
+        public static void tintMenu(@NonNull Toolbar toolbar, @Nullable Menu menu, final @ColorInt int color) {
+            try {
+                final Field field = Toolbar.class.getDeclaredField("mCollapseIcon");
+                field.setAccessible(true);
+                Drawable collapseIcon = (Drawable) field.get(toolbar);
+                if (collapseIcon != null) {
+                    field.set(toolbar, TintHelper.createTintedDrawable(collapseIcon, color));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            // credits: https://snow.dog/blog/how-to-dynamicaly-change-android-toolbar-icons-color/
+            final PorterDuffColorFilter colorFilter = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
+            for (int i = 0; i < toolbar.getChildCount(); i++) {
+                final View v = toolbar.getChildAt(i);
+                // We can't iterate through the toolbar.getMenu() here, because we need the ActionMenuItemView. ATEActionMenuItemView is overriding the item icon tint color.
+                if (v instanceof ActionMenuView) {
+                    for (int j = 0; j < ((ActionMenuView) v).getChildCount(); j++) {
+                        final View innerView = ((ActionMenuView) v).getChildAt(j);
+                        if (innerView instanceof ActionMenuItemView) {
+                            int drawablesCount = ((ActionMenuItemView) innerView).getCompoundDrawables().length;
+                            for (int k = 0; k < drawablesCount; k++) {
+                                if (((ActionMenuItemView) innerView).getCompoundDrawables()[k] != null) {
+                                    ((ActionMenuItemView) innerView).getCompoundDrawables()[k].setColorFilter(colorFilter);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (menu == null)
+                menu = toolbar.getMenu();
+            if (menu != null && menu.size() > 0) {
+                for (int i = 0; i < menu.size(); i++) {
+                    final MenuItem item = menu.getItem(i);
+                    // We must iterate through the toolbar.getMenu() too, to keep the tint when resuming the paused activity.
+                    if (item.getIcon() != null) {
+                        item.setIcon(TintHelper.createTintedDrawable(item.getIcon(), color));
+                    }
+                    // Search view theming
+                    if (item.getActionView() != null && (item.getActionView() instanceof android.widget.SearchView || item.getActionView() instanceof android.support.v7.widget.SearchView)) {
+                        SearchViewTintUtil.setSearchViewContentColor(item.getActionView(), color);
+                    }
+                }
+            }
         }
 
         private int getExpandedTextColor() {
@@ -262,54 +311,11 @@ public class ToolbarProcessor implements ViewProcessor<Toolbar, Menu> {
                 mOverflowView.setImageDrawable(TintHelper.createTintedDrawable(mOriginalOverflowIcon, tintColor));
         }
 
-        // Some things done within this method might look weird, but they are all needed.
-        @SuppressWarnings("unchecked")
-        public static void tintMenu(@NonNull Toolbar toolbar, @Nullable Menu menu, final @ColorInt int color) {
-            try {
-                final Field field = Toolbar.class.getDeclaredField("mCollapseIcon");
-                field.setAccessible(true);
-                Drawable collapseIcon = (Drawable) field.get(toolbar);
-                if (collapseIcon != null) {
-                    field.set(toolbar, TintHelper.createTintedDrawable(collapseIcon, color));
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            // credits: https://snow.dog/blog/how-to-dynamicaly-change-android-toolbar-icons-color/
-            final PorterDuffColorFilter colorFilter = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
-            for (int i = 0; i < toolbar.getChildCount(); i++) {
-                final View v = toolbar.getChildAt(i);
-                // We can't iterate through the toolbar.getMenu() here, because we need the ActionMenuItemView. ATEActionMenuItemView is overriding the item icon tint color.
-                if (v instanceof ActionMenuView) {
-                    for (int j = 0; j < ((ActionMenuView) v).getChildCount(); j++) {
-                        final View innerView = ((ActionMenuView) v).getChildAt(j);
-                        if (innerView instanceof ActionMenuItemView) {
-                            int drawablesCount = ((ActionMenuItemView) innerView).getCompoundDrawables().length;
-                            for (int k = 0; k < drawablesCount; k++) {
-                                if (((ActionMenuItemView) innerView).getCompoundDrawables()[k] != null) {
-                                    ((ActionMenuItemView) innerView).getCompoundDrawables()[k].setColorFilter(colorFilter);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (menu == null)
-                menu = toolbar.getMenu();
-            if (menu != null && menu.size() > 0) {
-                for (int i = 0; i < menu.size(); i++) {
-                    final MenuItem item = menu.getItem(i);
-                    // We must iterate through the toolbar.getMenu() too, to keep the tint when resuming the paused activity.
-                    if (item.getIcon() != null) {
-                        item.setIcon(TintHelper.createTintedDrawable(item.getIcon(), color));
-                    }
-                    // Search view theming
-                    if (item.getActionView() != null && (item.getActionView() instanceof android.widget.SearchView || item.getActionView() instanceof android.support.v7.widget.SearchView)) {
-                        SearchViewTintUtil.setSearchViewContentColor(item.getActionView(), color);
-                    }
-                }
+        @Override
+        public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+            if (mLastVerticalOffset != verticalOffset) {
+                mLastVerticalOffset = verticalOffset;
+                invalidateMenu();
             }
         }
 
@@ -343,14 +349,6 @@ public class ToolbarProcessor implements ViewProcessor<Toolbar, Menu> {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-        }
-
-        @Override
-        public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-            if (mLastVerticalOffset != verticalOffset) {
-                mLastVerticalOffset = verticalOffset;
-                invalidateMenu();
             }
         }
     }

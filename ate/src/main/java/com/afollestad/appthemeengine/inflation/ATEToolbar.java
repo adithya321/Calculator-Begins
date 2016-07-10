@@ -14,6 +14,8 @@ import com.afollestad.appthemeengine.tagprocessors.ATEDefaultTags;
  */
 class ATEToolbar extends Toolbar implements PostInflationApplier, ViewInterface {
 
+    private String mKey;
+
     public ATEToolbar(Context context) {
         super(context);
         init(context, null);
@@ -28,8 +30,6 @@ class ATEToolbar extends Toolbar implements PostInflationApplier, ViewInterface 
         super(context, attrs);
         init(context, keyContext);
     }
-
-    private String mKey;
 
     private void init(Context context, @Nullable ATEActivity keyContext) {
         ATEDefaultTags.process(this);

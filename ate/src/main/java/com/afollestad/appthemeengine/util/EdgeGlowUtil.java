@@ -23,14 +23,25 @@ import java.lang.reflect.Field;
 
 public final class EdgeGlowUtil {
 
-    private EdgeGlowUtil() {
-    }
+    private static Field EDGE_GLOW_FIELD_EDGE;
 
     // Invalidation methods
-
-    private static Field EDGE_GLOW_FIELD_EDGE;
     private static Field EDGE_GLOW_FIELD_GLOW;
     private static Field EDGE_EFFECT_COMPAT_FIELD_EDGE_EFFECT;
+    private static Field SCROLL_VIEW_FIELD_EDGE_GLOW_TOP;
+    private static Field SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM;
+    private static Field NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_TOP;
+    private static Field NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM;
+    private static Field LIST_VIEW_FIELD_EDGE_GLOW_TOP;
+    private static Field LIST_VIEW_FIELD_EDGE_GLOW_BOTTOM;
+    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_TOP;
+    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_LEFT;
+    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_RIGHT;
+    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_BOTTOM;
+    private static Field VIEW_PAGER_FIELD_EDGE_GLOW_LEFT;
+    private static Field VIEW_PAGER_FIELD_EDGE_GLOW_RIGHT;
+    private EdgeGlowUtil() {
+    }
 
     private static void invalidateEdgeEffectFields() {
         if (EDGE_GLOW_FIELD_EDGE != null && EDGE_GLOW_FIELD_GLOW != null &&
@@ -82,9 +93,6 @@ public final class EdgeGlowUtil {
         EDGE_EFFECT_COMPAT_FIELD_EDGE_EFFECT = efc;
     }
 
-    private static Field SCROLL_VIEW_FIELD_EDGE_GLOW_TOP;
-    private static Field SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM;
-
     private static void invalidateScrollViewFields() {
         if (SCROLL_VIEW_FIELD_EDGE_GLOW_TOP != null && SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM != null) {
             SCROLL_VIEW_FIELD_EDGE_GLOW_TOP.setAccessible(true);
@@ -105,9 +113,6 @@ public final class EdgeGlowUtil {
             }
         }
     }
-
-    private static Field NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_TOP;
-    private static Field NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM;
 
     private static void invalidateNestedScrollViewFields() {
         if (NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_TOP != null && NESTED_SCROLL_VIEW_FIELD_EDGE_GLOW_BOTTOM != null) {
@@ -130,9 +135,6 @@ public final class EdgeGlowUtil {
         }
     }
 
-    private static Field LIST_VIEW_FIELD_EDGE_GLOW_TOP;
-    private static Field LIST_VIEW_FIELD_EDGE_GLOW_BOTTOM;
-
     private static void invalidateListViewFields() {
         if (LIST_VIEW_FIELD_EDGE_GLOW_TOP != null && LIST_VIEW_FIELD_EDGE_GLOW_BOTTOM != null) {
             LIST_VIEW_FIELD_EDGE_GLOW_TOP.setAccessible(true);
@@ -153,11 +155,6 @@ public final class EdgeGlowUtil {
             }
         }
     }
-
-    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_TOP;
-    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_LEFT;
-    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_RIGHT;
-    private static Field RECYCLER_VIEW_FIELD_EDGE_GLOW_BOTTOM;
 
     private static void invalidateRecyclerViewFields() {
         if (RECYCLER_VIEW_FIELD_EDGE_GLOW_TOP != null && RECYCLER_VIEW_FIELD_EDGE_GLOW_LEFT != null &&
@@ -190,9 +187,6 @@ public final class EdgeGlowUtil {
             }
         }
     }
-
-    private static Field VIEW_PAGER_FIELD_EDGE_GLOW_LEFT;
-    private static Field VIEW_PAGER_FIELD_EDGE_GLOW_RIGHT;
 
     private static void invalidateViewPagerFields() {
         if (VIEW_PAGER_FIELD_EDGE_GLOW_LEFT != null && VIEW_PAGER_FIELD_EDGE_GLOW_RIGHT != null) {

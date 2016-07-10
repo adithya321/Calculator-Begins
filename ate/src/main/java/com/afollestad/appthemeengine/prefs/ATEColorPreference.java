@@ -17,6 +17,7 @@ public class ATEColorPreference extends Preference {
     private View mView;
     private int color;
     private int border;
+    private String mKey;
 
     public ATEColorPreference(Context context) {
         this(context, null, 0);
@@ -33,8 +34,6 @@ public class ATEColorPreference extends Preference {
         init(context, attrs);
 
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

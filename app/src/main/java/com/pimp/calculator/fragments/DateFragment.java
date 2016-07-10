@@ -24,9 +24,6 @@ import java.util.Locale;
 
 public class DateFragment extends Fragment {
 
-    public DateFragment() {
-    }
-
     public Calendar calendar;
     public TextView startDateView, endDateView, startTimeView, endTimeView;
     public int year_start, month_start, day_start, year_end, month_end, day_end;
@@ -68,6 +65,8 @@ public class DateFragment extends Fragment {
             endTimeView.setText(hour_end + ":" + minute_end);
         }
     };
+    public DateFragment() {
+    }
 
     public static android.support.v4.app.Fragment newInstance() {
         return new DateFragment();

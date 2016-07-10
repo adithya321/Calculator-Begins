@@ -12,6 +12,9 @@ import java.lang.reflect.Field;
  */
 public final class TextInputLayoutUtil {
 
+    private TextInputLayoutUtil() {
+    }
+
     public static void setHint(@NonNull TextInputLayout view, @ColorInt int hintColor) {
         try {
             final Field mDefaultTextColorField = TextInputLayout.class.getDeclaredField("mDefaultTextColor");
@@ -30,8 +33,5 @@ public final class TextInputLayoutUtil {
         } catch (Throwable t) {
             throw new RuntimeException("Failed to set TextInputLayout accent (expanded) color: " + t.getLocalizedMessage(), t);
         }
-    }
-
-    private TextInputLayoutUtil() {
     }
 }

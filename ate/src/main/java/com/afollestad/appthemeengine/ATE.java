@@ -36,6 +36,10 @@ public final class ATE extends ATEBase {
 
     public static final String IGNORE_TAG = "ate_ignore";
     public static final int USE_DEFAULT = Integer.MAX_VALUE;
+    private static ArrayList<View> mPostInflationApply;
+
+    private ATE() {
+    }
 
     /**
      * @hide
@@ -45,8 +49,6 @@ public final class ATE extends ATEBase {
             mPostInflationApply = new ArrayList<>();
         mPostInflationApply.add(view);
     }
-
-    private static ArrayList<View> mPostInflationApply;
 
     @SuppressWarnings("unchecked")
     private static void performDefaultProcessing(@NonNull Context context, @NonNull View current, @Nullable String key) {
@@ -184,6 +186,32 @@ public final class ATE extends ATEBase {
         throw new IllegalStateException("ATE.apply() is no longer used, ATE intercepts views at inflation time. Use postApply() here instead.");
     }
 
+/*    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private static void applyTaskDescription(@NonNull Activity activity, @Nullable String key) {
+        int color = 0;
+        Bitmap icon = null;
+        if (activity instanceof ATETaskDescriptionCustomizer) {
+            final ATETaskDescriptionCustomizer customizer = (ATETaskDescriptionCustomizer) activity;
+            color = customizer.getTaskDescriptionColor();
+            icon = customizer.getTaskDescriptionIcon();
+            if (color == ATE.USE_DEFAULT)
+                color = Config.primaryColor(activity, key);
+        } else {
+            color = Config.primaryColor(activity, key);
+        }
+
+        // Task description requires fully opaque color
+        color = ATEUtil.stripAlpha(color);
+        // Default is app's launcher icon
+        if (icon == null)
+            icon = ((BitmapDrawable) activity.getApplicationInfo().loadIcon(activity.getPackageManager())).getBitmap();
+
+        // Sets color of entry in the system recents page
+        //ActivityManager.TaskDescription td = new ActivityManager.TaskDescription(
+        //        (String) activity.getTitle(), icon, color);
+        //activity.setTaskDescription(td);
+    }*/
+
     @SuppressWarnings("unchecked")
     public static void postApply(@NonNull Activity activity, @Nullable String key) {
         if (didPreApply == null)
@@ -223,32 +251,6 @@ public final class ATE extends ATEBase {
             MDUtil.initMdSupport(activity, key);
     }
 
-/*    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private static void applyTaskDescription(@NonNull Activity activity, @Nullable String key) {
-        int color = 0;
-        Bitmap icon = null;
-        if (activity instanceof ATETaskDescriptionCustomizer) {
-            final ATETaskDescriptionCustomizer customizer = (ATETaskDescriptionCustomizer) activity;
-            color = customizer.getTaskDescriptionColor();
-            icon = customizer.getTaskDescriptionIcon();
-            if (color == ATE.USE_DEFAULT)
-                color = Config.primaryColor(activity, key);
-        } else {
-            color = Config.primaryColor(activity, key);
-        }
-
-        // Task description requires fully opaque color
-        color = ATEUtil.stripAlpha(color);
-        // Default is app's launcher icon
-        if (icon == null)
-            icon = ((BitmapDrawable) activity.getApplicationInfo().loadIcon(activity.getPackageManager())).getBitmap();
-
-        // Sets color of entry in the system recents page
-        //ActivityManager.TaskDescription td = new ActivityManager.TaskDescription(
-        //        (String) activity.getTitle(), icon, color);
-        //activity.setTaskDescription(td);
-    }*/
-
     @Nullable
     private static Toolbar getPostInflationToolbar() {
         synchronized (IGNORE_TAG) {
@@ -280,8 +282,5 @@ public final class ATE extends ATEBase {
         if (toolbar != null && toolbar.getParent() instanceof CollapsingToolbarLayout)
             return; // collapsing toolbar handles the overflow color
         ATEUtil.setOverflowButtonColor(activity, toolbar, tintColor);
-    }
-
-    private ATE() {
     }
 }

@@ -14,6 +14,8 @@ import com.afollestad.materialdialogs.prefs.MaterialListPreference;
  */
 public class ATEMultiSelectPreference extends MaterialListPreference {
 
+    private String mKey;
+
     public ATEMultiSelectPreference(Context context) {
         super(context);
         init(context, null);
@@ -33,8 +35,6 @@ public class ATEMultiSelectPreference extends MaterialListPreference {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

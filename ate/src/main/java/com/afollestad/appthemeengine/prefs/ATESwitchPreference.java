@@ -20,6 +20,9 @@ import java.lang.reflect.Field;
  */
 public class ATESwitchPreference extends SwitchPreference {
 
+    private String mKey;
+    private ATESwitch mSwitch;
+
     public ATESwitchPreference(Context context) {
         super(context);
         init(context, null);
@@ -34,15 +37,11 @@ public class ATESwitchPreference extends SwitchPreference {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
-
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ATESwitchPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
-    private ATESwitch mSwitch;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

@@ -49,6 +49,9 @@ public final class ATEUtil {
 //        }
 //    }
 
+    private ATEUtil() {
+    }
+
     public static int adjustAlpha(@ColorInt int color, @FloatRange(from = 0.0, to = 1.0) float factor) {
         int alpha = Math.round(Color.alpha(color) * factor);
         int red = Color.red(color);
@@ -201,10 +204,6 @@ public final class ATEUtil {
                 activity instanceof AppCompatActivity ? ((AppCompatActivity) activity).getDelegate() : null));
     }
 
-    public interface LayoutCallback {
-        void onLayout(View view);
-    }
-
     public static void waitForLayout(final View view, final LayoutCallback callback) {
         view.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -225,6 +224,7 @@ public final class ATEUtil {
         }
     }
 
-    private ATEUtil() {
+    public interface LayoutCallback {
+        void onLayout(View view);
     }
 }

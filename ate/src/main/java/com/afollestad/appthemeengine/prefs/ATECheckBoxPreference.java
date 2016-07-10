@@ -20,6 +20,8 @@ import java.lang.reflect.Field;
  */
 public class ATECheckBoxPreference extends CheckBoxPreference {
 
+    private String mKey;
+
     public ATECheckBoxPreference(Context context) {
         super(context);
         init(context, null);
@@ -40,8 +42,6 @@ public class ATECheckBoxPreference extends CheckBoxPreference {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs);
     }
-
-    private String mKey;
 
     private void init(Context context, AttributeSet attrs) {
         setLayoutResource(R.layout.ate_preference_custom);

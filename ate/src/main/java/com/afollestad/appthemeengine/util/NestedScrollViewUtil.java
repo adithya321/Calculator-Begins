@@ -8,11 +8,11 @@ import android.view.View;
  */
 public final class NestedScrollViewUtil {
 
+    private NestedScrollViewUtil() {
+    }
+
     // External class is used after checking if NestedScrollView is on the class path. Avoids compile errors.
     public static boolean isNestedScrollView(View view) {
         return view instanceof NestedScrollView;
-    }
-
-    private NestedScrollViewUtil() {
     }
 }

@@ -31,11 +31,6 @@ public class TextColorTagProcessor extends TagProcessor {
         mHintMode = hints;
     }
 
-    @Override
-    public boolean isTypeSupported(@NonNull View view) {
-        return view instanceof TextView;
-    }
-
     // TODO is dependent parameter needed?
     private static ColorStateList getTextSelector(@ColorInt int color, View view, boolean dependent) {
         if (dependent)
@@ -48,6 +43,11 @@ public class TextColorTagProcessor extends TagProcessor {
                 view instanceof Button ? Color.BLACK : ATEUtil.adjustAlpha(color, 0.3f),
                 color
         });
+    }
+
+    @Override
+    public boolean isTypeSupported(@NonNull View view) {
+        return view instanceof TextView;
     }
 
     @Override

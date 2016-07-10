@@ -8,11 +8,11 @@ import android.view.View;
  */
 public final class TabLayoutUtil {
 
+    private TabLayoutUtil() {
+    }
+
     // External class is used after checking if TabLayout is on the class path. Avoids compile errors.
     public static boolean isTabLayout(View view) {
         return view instanceof TabLayout;
-    }
-
-    private TabLayoutUtil() {
     }
 }
