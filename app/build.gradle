@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '24'
 
     defaultConfig {
         applicationId "com.pimp.calculator"
@@ -10,6 +10,8 @@ android {
         targetSdkVersion 24
         versionCode 28
         versionName "3.0.5"
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
         release {
@@ -44,7 +46,6 @@ dependencies {
     }
     compile 'com.github.Angtrim:Android-Five-Stars-Library:v3.1'
     compile 'com.mikepenz:google-material-typeface:2.2.0.1.original@aar'
-    //compile 'com.github.afollestad:app-theme-engine:1.0.1'
     compile 'com.github.javiersantos:AppUpdater:2.0.2'
     compile 'com.github.gabrielemariotti.changeloglib:changelog:2.0.0'
     compile 'cat.ereza:customactivityoncrash:1.4.0'
