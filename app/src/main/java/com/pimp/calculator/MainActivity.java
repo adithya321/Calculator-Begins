@@ -1389,8 +1389,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     done = false;
                 } catch (SyntaxException S) {
                     if (done) {
-                        Toast oast = Toast.makeText(MainActivity.this, S.toString(), Toast.LENGTH_SHORT);
-                        oast.show();
+                        Toast.makeText(MainActivity.this, S.toString(), Toast.LENGTH_SHORT).show();
                     }
                     done = false;
                 }

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.pimp.calculator"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 28
         versionName "3.0.5"
 
@@ -18,6 +18,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        warningsAsErrors true
     }
 }
 
@@ -35,11 +38,11 @@ dependencies {
     compile project(':ate')
     compile files('libs/slider.jar')
 
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:design:24.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
 
-    compile 'com.google.android.gms:play-services-analytics:9.2.0'
-    compile 'com.google.android.gms:play-services-appinvite:9.2.0'
+    compile 'com.google.android.gms:play-services-analytics:9.6.1'
+    compile 'com.google.android.gms:play-services-appinvite:9.6.1'
 
     compile('com.mikepenz:aboutlibraries:5.5.7@aar') {
         transitive = true
@@ -66,7 +69,7 @@ dependencies {
     // Android Testing Support Library's runner and rules
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
-    androidTestCompile 'com.android.support:support-annotations:24.0.0'
+    androidTestCompile 'com.android.support:support-annotations:25.0.0'
 
     // Espresso UI Testing
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
