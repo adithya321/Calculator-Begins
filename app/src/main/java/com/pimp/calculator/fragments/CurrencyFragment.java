@@ -18,17 +18,17 @@ import com.pimp.calculator.util.AutoResizeTextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Document;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import java.util.Iterator;
+import java.util.Scanner;
 
 public class CurrencyFragment extends Fragment {
 
-    private final static String URL_WEB_SERVICE = "XXXhttp://www.apilayer.net/api/live?access_key=6c3827ecb84169c872e8012744b16418&format=1";
+    private final static String URL_WEB_SERVICE = "http://api.fixer.io/latest?base=";
     ConversionRate conversionRate;
     String strJson = "{\n" +
             "  \"success\":true,\n" +
@@ -209,6 +209,7 @@ public class CurrencyFragment extends Fragment {
             "}";
     private AutoResizeTextView result_TV, resultant_TV;
     private Spinner fro, too;
+
     public CurrencyFragment() {
     }
 
@@ -285,12 +286,17 @@ public class CurrencyFragment extends Fragment {
         String result = null;
         try {
             URL url = new URL(str);
-            URLConnection connection = url.openConnection();
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.parse(connection.getInputStream());
-            result = doc.getDocumentElement().getTextContent();
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            Scanner s = new Scanner(in).useDelimiter("\\A");
+            result = s.hasNext() ? s.next() : "";
+            JSONObject jsonObject = new JSONObject(new JSONObject(result).getString("rates"));
+            Iterator<String> keys = jsonObject.keys();
+            String str_Name = keys.next();
+            result = new JSONObject(jsonObject.toString()).getString(str_Name);
+            Log.e("Result", result);
         } catch (Exception ex) {
+            Log.e("Result", ex.toString());
         }
         return result;
     }
@@ -312,8 +318,9 @@ public class CurrencyFragment extends Fragment {
         int numFromCurrency = fro.getSelectedItemPosition();
         int numToCurrency = too.getSelectedItemPosition();
 
-        url.append("FromCurrency=").append(getResources().getStringArray(R.array.currency_exp)[numFromCurrency].substring(0, 3));
-        url.append("&ToCurrency=").append(getResources().getStringArray(R.array.currency_exp)[numToCurrency].substring(0, 3));
+        url.append(getResources().getStringArray(R.array.currency_exp)[numFromCurrency].substring(0, 3));
+        url.append("&symbols=").append(getResources().getStringArray(R.array.currency_exp)[numFromCurrency].substring(0, 3));
+        url.append(",").append(getResources().getStringArray(R.array.currency_exp)[numToCurrency].substring(0, 3));
         Log.e("URL", url.toString());
 
         return url.toString();
