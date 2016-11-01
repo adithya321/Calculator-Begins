@@ -11,7 +11,6 @@
 * [Android In-App Billing v3 Library](https://github.com/anjlab/android-inapp-billing-v3)
 * [App Theme Engine](https://github.com/afollestad/app-theme-engine)
 * [AppUpdater](https://github.com/javiersantos/AppUpdater)
-* [ChangeLog Library](https://github.com/gabrielemariotti/changeloglib)
 * [Custom Activity On Crash](https://github.com/Ereza/CustomActivityOnCrash)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Material Ripple Layout](https://github.com/balysv/material-ripple)

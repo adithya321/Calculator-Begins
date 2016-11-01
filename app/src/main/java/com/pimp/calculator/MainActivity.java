@@ -248,9 +248,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         @Override
         public boolean onExtraClicked(View v, Libs.SpecialButton specialButton) {
             switch (v.getId()) {
-                case R.id.aboutSpecial1:
-                    startActivity(new Intent(MainActivity.this, ChangelogActivity.class));
-                    return true;
                 case R.id.aboutSpecial2:
                     String PlayStoreDevAccount = "https://play.google.com/store/apps/developer?id=P.I.M.P.";
                     Intent devPlay = new Intent(Intent.ACTION_VIEW, Uri.parse(PlayStoreDevAccount));

@@ -81,8 +81,5 @@
             android:label="@string/settings"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <activity
-            android:name=".ChangelogActivity"
-            android:theme="@style/Theme.AppCompat" />
     </application>
 </manifest>

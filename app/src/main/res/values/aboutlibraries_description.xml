@@ -7,7 +7,6 @@
         <![CDATA[Developed by <b>Adithya J</b> and <b>Satheesh P</b><br />Icons designed by <b>Shailesh</b><br />Made with {gmd-favorite} in <b>India.</b>]]>
     </string>
 
-    <string name="aboutLibraries_description_special1_name">CHANGELOG</string>
     <string name="aboutLibraries_description_special2_name">OTHER APPS</string>
 
     <string name="define_license_none">none</string>
@@ -72,24 +71,6 @@
     <string name="library_FiveStars_repositoryLink">https://github.com/Angtrim/Android-Five-Stars-Library</string>
     <string name="library_FiveStars_owner">Angelo Gallarello</string>
     <string name="library_FiveStars_year">2015</string>
-
-
-    <string name="define_ChangeLog">year;owner</string>
-    <string name="library_ChangeLog_author">Gabriele Mariotti</string>
-    <string name="library_ChangeLog_authorWebsite">https://plus.google.com/u/0/+GabrieleMariotti</string>
-    <string name="library_ChangeLog_libraryName">ChangeLog</string>
-    <string name="library_ChangeLog_libraryVersion">2.0.0</string>
-    <string name="library_ChangeLog_libraryWebsite">https://github.com/gabrielemariotti/changeloglib</string>
-    <string name="library_ChangeLog_licenseId">apache_2_0</string>
-    <string name="library_ChangeLog_libraryDescription">
-        <![CDATA[
-            ChangeLog Library provides an easy way to display a change log in your Android app.
-        ]]>
-    </string>
-    <string name="library_ChangeLog_isOpenSource">true</string>
-    <string name="library_ChangeLog_repositoryLink">https://github.com/gabrielemariotti/changeloglib</string>
-    <string name="library_ChangeLog_owner">Gabriele Mariotti</string>
-    <string name="library_ChangeLog_year">2013&#8211;2015</string>
 
 
     <string name="define_CustomCrash">year;owner</string>

@@ -8,8 +8,8 @@ android {
         applicationId "com.pimp.calculator"
         minSdkVersion 23
         targetSdkVersion 25
-        versionCode 29
-        versionName "3.0.6"
+        versionCode 30
+        versionName "3.0.7"
     }
     buildTypes {
         release {
