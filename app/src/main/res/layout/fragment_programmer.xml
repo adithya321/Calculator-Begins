@@ -150,286 +150,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!--<LinearLayout
-        android:id="@+id/memory_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:baselineAligned="false"
-        android:visibility="visible">
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/MC_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/MC" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/MS_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/MS" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/MR_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/MR" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/pro_M_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/M" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/pro_history_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/HIS" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-    </LinearLayout>-->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:baselineAligned="false">
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/D_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/D"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/E_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/E"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/F_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/F"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/AC_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/clr"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:baselineAligned="false">
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/A_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/A"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/B_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/B"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/C_hex_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/C"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-
-        <com.balysv.materialripple.MaterialRippleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:mrl_rippleColor="@color/LightGrey"
-            app:mrl_rippleDelayClick="false"
-            app:mrl_rippleDuration="500"
-            app:mrl_rippleFadeDuration="1000"
-            app:mrl_rippleOverlay="true">
-
-            <Button
-                android:id="@+id/C_Btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="BtnClick"
-                android:tag="text_color|secondary_text,background|accent_color"
-                android:text="@string/delete"
-                app:mrl_rippleDelayClick="false" />
-        </com.balysv.materialripple.MaterialRippleLayout>
-    </LinearLayout>
-
     <LinearLayout
         android:id="@+id/pro_history_layout"
         android:layout_width="match_parent"
@@ -484,10 +204,567 @@
             android:visibility="gone" />
     </LinearLayout>
 
-    <include
+    <LinearLayout
         android:id="@+id/pro_simple_pad"
-        layout="@layout/simple_pad"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/E_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/E"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/F_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/F"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/leftBracket_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/leftBracket" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/rightBracket_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/rightBracket" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/C_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/delete"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/AC_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/clr"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/D_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/D"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/seven"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/eight"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/nine"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/div_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/div"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false">
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/C_hex_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/C"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/four"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/five"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/six"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/mul_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/mul"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/B_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/B"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/one"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/two"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/three"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/sub_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/sub"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/A_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|secondary_text,background|accent_color"
+                    android:text="@string/A"
+                    app:mrl_rippleDelayClick="false" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/dot_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/dot"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/Btn_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/zero"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/equals_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/equals"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:mrl_rippleColor="@color/LightGrey"
+                app:mrl_rippleDelayClick="false"
+                app:mrl_rippleDuration="500"
+                app:mrl_rippleFadeDuration="1000"
+                app:mrl_rippleOverlay="true">
+
+                <Button
+                    android:id="@+id/add_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="BtnClick"
+                    android:tag="text_color|primary_text,background|primary_color"
+                    android:text="@string/add"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
