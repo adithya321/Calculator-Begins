@@ -29,8 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:ellipsize="end"
                 android:enabled="false"
-                android:inputType="text|textNoSuggestions"
                 android:textColor="@color/display_formula_text_color"
                 android:textSize="23sp" />
 
@@ -38,11 +38,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
+                android:ellipsize="end"
                 android:enabled="false"
-                android:inputType="text|textNoSuggestions"
                 android:textColor="@color/display_formula_text_color"
                 android:textSize="23sp" />
-
         </ViewSwitcher>
 
         <com.pimp.calculator.view.BackspaceImageButton
@@ -54,7 +53,5 @@
             android:contentDescription="@string/del"
             android:src="@drawable/backspace_btn"
             android:tint="@color/display_formula_text_color" />
-
     </LinearLayout>
-
 </FrameLayout>
