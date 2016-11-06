@@ -1,22 +1,4 @@
-/*
- * Calculator Begins
- * Copyright (C) 2016  Adithya J
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
-
-package com.pimp.calculator.math;
+package com.xlythe.math;
 
 import android.content.Context;
 import android.util.Log;
@@ -27,7 +9,7 @@ import java.util.Map;
 
 /**
  * Translates an equation typed in the default locale back into English
- * <p/>
+ * <p>
  * This assumes the app has English translations
  */
 public class Localizer {
@@ -80,8 +62,8 @@ public class Localizer {
 
     /**
      * Localize the input into English
-     * <p/>
-     * Used because the com.pimp.calculator.math library only understands English.
+     * <p>
+     * Used because the math library only understands English.
      */
     public String localize(String input) {
         // Delocalize functions (e.g. Spanish localizes "sin" as "sen").
@@ -109,8 +91,8 @@ public class Localizer {
 
     /**
      * Localize the input to the user's original locale
-     * <p/>
-     * We only care about comas and periods because, by now, the com.pimp.calculator.math problem should be solved.
+     * <p>
+     * We only care about comas and periods because, by now, the math problem should be solved.
      */
     String relocalize(String input) {
         input = retranslate(input, ",");

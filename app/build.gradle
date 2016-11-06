@@ -52,6 +52,7 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':calculator2wear')
+    compile project(':math')
     compile project(':ate')
     compile files('libs/slider.jar')
 
@@ -72,7 +73,6 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.9.0.2'
     compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
     compile 'com.balysv:material-ripple:1.0.2'
-    compile 'com.xlythe:math-library:1.0.0'
 
     // Dependencies for unit testing
     testCompile 'junit:junit:4.12'

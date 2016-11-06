@@ -1,22 +1,4 @@
-/*
- * Calculator Begins
- * Copyright (C) 2016  Adithya J
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
-
-package com.pimp.calculator.math;
+package com.xlythe.math;
 
 import android.util.Log;
 
@@ -164,7 +146,8 @@ public class MatrixModule extends Module {
         }
 
         // Get percentage.
-        input = input.replaceAll("(?<=\\d)%(?!\\d)", "*0.01");
+        //TODO :    input = input.replaceAll("(?<=\\d)%(?!\\d)", "*0.01");
+        input = input.replaceAll("(?<=\\d)%(?!\\d)", "\u00d70.01");
 
         // Might as well get factorial too.
         m = Pattern.compile("(?<!\\.)([0-9]+)\\!").matcher(input);
@@ -222,7 +205,9 @@ public class MatrixModule extends Module {
 
         // Split into seperate arrays of operators and operands.
         // Operator 0 applies to operands 0 and 1, and so on
-        String[] parts = input.split("\\*|\\+|(?<=\\d|\\])(?<=\\d|\\])-|/|\\^");
+
+        //TODO : String[] parts = input.split("\\*|\\+|(?<=\\d|\\])(?<=\\d|\\])-|/|\\^");
+        String[] parts = input.split("\u00d7|\\+|(?<=\\d|\\])(?<=\\d|\\])-|\u00f7|\\^");
         char[] ops = opSplit(input);
 
         // This never changes, so no need to keep calling it

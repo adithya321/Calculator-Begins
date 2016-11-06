@@ -1,28 +1,10 @@
-/*
- * Calculator Begins
- * Copyright (C) 2016  Adithya J
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
-
-package com.pimp.calculator.math;
+package com.xlythe.math;
 
 public class EquationFormatter {
 
     /**
      * Append parenthesis at the end of unclosed functions
-     * <p/>
+     * <p>
      * ie. sin(90 becomes sin(90)
      */
     public static String appendParenthesis(String input) {
@@ -41,7 +23,7 @@ public class EquationFormatter {
 
     /**
      * Insert html superscripts so that exponents appear properly.
-     * <p/>
+     * <p>
      * ie. 2^3 becomes 2<sup>3</sup>
      */
     public String insertSupScripts(String input) {
@@ -115,11 +97,11 @@ public class EquationFormatter {
 
     /**
      * Add comas to an equation or result
-     * <p/>
+     * <p>
      * 12345 becomes 12,345
-     * <p/>
+     * <p>
      * 10101010 becomes 1010 1010
-     * <p/>
+     * <p>
      * ABCDEF becomes AB CD EF
      */
     public String addComas(Solver solver, String text) {
@@ -131,11 +113,11 @@ public class EquationFormatter {
      * Add comas to an equation or result.
      * A temp character (BaseModule.SELECTION_HANDLE) will be added
      * where the selection handle should be.
-     * <p/>
+     * <p>
      * 12345 becomes 12,345
-     * <p/>
+     * <p>
      * 10101010 becomes 1010 1010
-     * <p/>
+     * <p>
      * ABCDEF becomes AB CD EF
      */
     public String addComas(Solver solver, String text, int selectionHandle) {

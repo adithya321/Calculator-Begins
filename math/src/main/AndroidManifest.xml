@@ -17,7 +17,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pimp.calculator.math">
+    package="com.xlythe.math">
 
     <application
         android:allowBackup="true"

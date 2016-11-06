@@ -1,26 +1,11 @@
-/*
- * Calculator Begins
- * Copyright (C) 2016  Adithya J
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
-
-package com.pimp.calculator.math;
+package com.xlythe.math;
 
 import java.text.DecimalFormatSymbols;
 import java.util.regex.Pattern;
 
+/**
+ * Created by Will on 11/8/2014.
+ */
 public class Constants {
     public static final String INFINITY_UNICODE = "\u221e";
     // Double.toString() for Infinity
@@ -28,9 +13,13 @@ public class Constants {
     // Double.toString() for NaN
     public static final String NAN = "NaN";
     public static final char MINUS = '\u2212';
-    public static final char MUL = '*';
+    //  TODO: MUL
+    //  public static final char MUL = '*';
+    public static final char MUL = '\u00d7';
     public static final char PLUS = '+';
-    public static final char DIV = '/';
+    //  TODO: DIV
+    //  public static final char DIV = '/';
+    public static final char DIV = '\u00f7';
     public static final char POWER_PLACEHOLDER = '\u200B';
     public static final char POWER = '^';
     public static final char EQUAL = '=';

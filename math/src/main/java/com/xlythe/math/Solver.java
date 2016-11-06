@@ -1,22 +1,4 @@
-/*
- * Calculator Begins
- * Copyright (C) 2016  Adithya J
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>
- */
-
-package com.pimp.calculator.math;
+package com.xlythe.math;
 
 import android.content.Context;
 
@@ -27,20 +9,22 @@ import org.javia.arity.SyntaxException;
 import java.util.Locale;
 
 /**
- * Solves com.pimp.calculator.math problems
- * <p/>
+ * Solves math problems
+ * <p>
  * Supports:
- * Basic com.pimp.calculator.math + functions (trig, pi)
+ * Basic math + functions (trig, pi)
  * Matrices
  * Hex and Bin conversion
  */
 public class Solver {
-    // Used for solving basic com.pimp.calculator.math
+    // Used for solving basic math
     private static final Symbols sSymbols = new Symbols();
     private BaseModule mBaseModule;
     private MatrixModule mMatrixModule;
     private GraphModule mGraphModule;
-    private int mLineLength = 15;
+    //TODO:mLineLength
+    //private int mLineLength = 15;
+    private int mLineLength = 8;
     private Localizer mLocalizer;
 
     public Solver() {
