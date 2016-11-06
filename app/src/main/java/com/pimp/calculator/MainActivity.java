@@ -75,14 +75,14 @@ import com.pimp.calculator.fragments.ExtrasFragment;
 import com.pimp.calculator.fragments.ProgrammerFragment;
 import com.pimp.calculator.fragments.StandardFragment;
 import com.pimp.calculator.fragments.UnitsFragment;
-import com.pimp.calculator.math.Base;
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.Solver;
 import com.pimp.calculator.util.AnalyticsApplication;
 import com.pimp.calculator.util.AutoResizeTextView;
 import com.pimp.calculator.util.CustomAdapter;
 import com.pimp.calculator.util.PagesBuilder;
 import com.pimp.calculator.util.ZoomOutPageTransformer;
+import com.xlythe.math.Base;
+import com.xlythe.math.Constants;
+import com.xlythe.math.Solver;
 
 import org.javia.arity.SyntaxException;
 
@@ -1271,8 +1271,11 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     binTV.setBackgroundColor(primary_color);
                     binTV.setTextColor(primary_text_color);
                     expression_TV.setText("");
-                    insert(changeBase(expression, base, Base.OCTAL));
-                    base = Base.OCTAL;
+                    //TODO:Add OCTAL
+                    /*insert(changeBase(expression, base, Base.OCTAL));
+                    base = Base.OCTAL;*/
+                    insert(changeBase(expression, base, Base.HEXADECIMAL));
+                    base = Base.HEXADECIMAL;
                     evaluate(expression);
                 } catch (SyntaxException S) {
                     Toast.makeText(getApplicationContext(), S.toString(), Toast.LENGTH_SHORT).show();
@@ -1463,13 +1466,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                     throw new SyntaxException();
                                 }
                                 break;
-                            case OCTAL:
+                            /*case OCTAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;
+                                break;*/
                             case HEXADECIMAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 16);
@@ -1497,13 +1500,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                     throw new SyntaxException();
                                 }
                                 break;
-                            case OCTAL:
+                            /*case OCTAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;
+                                break;*/
                         }
                         break;
                     case HEXADECIMAL:
@@ -1525,13 +1528,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                 break;
                             case HEXADECIMAL:
                                 break;
-                            case OCTAL:
+                            /*case OCTAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;
+                                break;*/
                         }
                         break;
                 }

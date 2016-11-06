@@ -27,14 +27,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ViewSwitcher;
 
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.EquationFormatter;
-import com.pimp.calculator.math.History;
-import com.pimp.calculator.math.HistoryEntry;
-import com.pimp.calculator.math.Persist;
-import com.pimp.calculator.math.Solver;
 import com.pimp.calculator.view.BackspaceImageButton;
 import com.pimp.calculator.view.FormattedNumberEditText;
+import com.xlythe.math.Constants;
+import com.xlythe.math.EquationFormatter;
+import com.xlythe.math.History;
+import com.xlythe.math.HistoryEntry;
+import com.xlythe.math.Persist;
+import com.xlythe.math.Solver;
 
 public class MainActivity extends Activity {
 
@@ -263,6 +263,6 @@ public class MainActivity extends Activity {
     }
 
     private enum State {
-        DELETE, CLEAR, ERROR;
+        DELETE, CLEAR, ERROR
     }
 }

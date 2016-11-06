@@ -20,7 +20,7 @@ package com.pimp.calculator;
 
 import android.content.Context;
 
-import com.pimp.calculator.math.Constants;
+import com.xlythe.math.Constants;
 
 import java.util.LinkedList;
 import java.util.List;

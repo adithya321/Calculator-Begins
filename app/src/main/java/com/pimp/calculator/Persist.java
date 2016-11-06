@@ -20,7 +20,7 @@ package com.pimp.calculator;
 
 import android.content.Context;
 
-import com.pimp.calculator.math.Base;
+import com.xlythe.math.Base;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

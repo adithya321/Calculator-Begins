@@ -27,7 +27,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.pimp.calculator.FloatingView.HistoryLine;
-import com.pimp.calculator.math.EquationFormatter;
+import com.xlythe.math.EquationFormatter;
 
 import java.util.Vector;
 

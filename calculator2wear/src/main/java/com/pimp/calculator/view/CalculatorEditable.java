@@ -21,8 +21,8 @@ package com.pimp.calculator.view;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.Solver;
+import com.xlythe.math.Constants;
+import com.xlythe.math.Solver;
 
 public class CalculatorEditable extends SpannableStringBuilder {
     private static final char[] ORIGINALS = {'-', '*', '/'};

@@ -28,11 +28,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.History;
-import com.pimp.calculator.math.Solver;
 import com.pimp.calculator.view.SolidLayout;
 import com.pimp.calculator.view.SolidPadLayout;
+import com.xlythe.math.Constants;
+import com.xlythe.math.History;
+import com.xlythe.math.Solver;
 
 public class CalculatorPageAdapter extends PagerAdapter {
     private final Context mContext;

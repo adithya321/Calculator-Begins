@@ -25,10 +25,10 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 
 import com.pimp.calculator.R;
-import com.pimp.calculator.math.BaseModule;
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.EquationFormatter;
-import com.pimp.calculator.math.Solver;
+import com.xlythe.math.BaseModule;
+import com.xlythe.math.Constants;
+import com.xlythe.math.EquationFormatter;
+import com.xlythe.math.Solver;
 
 import java.util.ArrayList;
 import java.util.Arrays;

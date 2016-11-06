@@ -26,11 +26,11 @@ import android.widget.EditText;
 import com.pimp.calculator.FloatingView.CalculatorDisplay;
 import com.pimp.calculator.FloatingView.CalculatorDisplay.Scroll;
 import com.pimp.calculator.FloatingView.GraphView;
-import com.pimp.calculator.math.BaseModule;
-import com.pimp.calculator.math.EquationFormatter;
-import com.pimp.calculator.math.GraphModule.OnGraphUpdatedListener;
-import com.pimp.calculator.math.Point;
-import com.pimp.calculator.math.Solver;
+import com.xlythe.math.BaseModule;
+import com.xlythe.math.EquationFormatter;
+import com.xlythe.math.GraphModule;
+import com.xlythe.math.Point;
+import com.xlythe.math.Solver;
 
 import org.javia.arity.SyntaxException;
 
@@ -58,7 +58,7 @@ public class Logic {
     private History mHistory;
     private Graph mGraph;
     private Listener mListener;
-    private OnGraphUpdatedListener mOnGraphUpdateListener = new OnGraphUpdatedListener() {
+    private GraphModule.OnGraphUpdatedListener mOnGraphUpdateListener = new GraphModule.OnGraphUpdatedListener() {
         @Override
         public void onGraphUpdated(List<Point> result) {
             mGraph.setData(result);

@@ -22,8 +22,8 @@ import android.content.Context;
 import android.view.ViewTreeObserver;
 
 import com.pimp.calculator.FloatingView.GraphView;
-import com.pimp.calculator.math.Point;
 import com.xlythe.engine.theme.Theme;
+import com.xlythe.math.Point;
 
 import java.util.LinkedList;
 import java.util.List;

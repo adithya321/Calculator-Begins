@@ -59,9 +59,9 @@ import com.pimp.calculator.FloatingView.HistoryLine;
 import com.pimp.calculator.Page.LargePanel;
 import com.pimp.calculator.Page.NormalPanel;
 import com.pimp.calculator.Page.SmallPanel;
-import com.pimp.calculator.math.Base;
-import com.pimp.calculator.math.BaseModule;
 import com.xlythe.engine.theme.Theme;
+import com.xlythe.math.Base;
+import com.xlythe.math.BaseModule;
 import com.xlythe.slider.Slider;
 import com.xlythe.slider.Slider.Direction;
 

@@ -27,11 +27,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.EquationFormatter;
-import com.pimp.calculator.math.History;
-import com.pimp.calculator.math.HistoryEntry;
-import com.pimp.calculator.math.Solver;
+import com.xlythe.math.Constants;
+import com.xlythe.math.EquationFormatter;
+import com.xlythe.math.History;
+import com.xlythe.math.HistoryEntry;
+import com.xlythe.math.Solver;
 
 import java.util.List;
 

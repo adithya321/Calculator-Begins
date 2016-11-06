@@ -43,10 +43,10 @@ import android.widget.TextView;
 
 import com.pimp.calculator.CalculatorSettings;
 import com.pimp.calculator.R;
-import com.pimp.calculator.math.BaseModule;
-import com.pimp.calculator.math.Constants;
-import com.pimp.calculator.math.EquationFormatter;
 import com.xlythe.engine.theme.ThemedEditText;
+import com.xlythe.math.BaseModule;
+import com.xlythe.math.Constants;
+import com.xlythe.math.EquationFormatter;
 
 import java.text.DecimalFormatSymbols;
 

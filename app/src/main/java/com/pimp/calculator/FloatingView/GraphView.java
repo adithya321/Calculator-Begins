@@ -30,7 +30,7 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.pimp.calculator.math.Point;
+import com.xlythe.math.Point;
 
 import java.text.DecimalFormat;
 import java.util.LinkedList;

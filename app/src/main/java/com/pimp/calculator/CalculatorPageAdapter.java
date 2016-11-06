@@ -23,7 +23,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pimp.calculator.math.Base;
+import com.xlythe.math.Base;
 
 import java.util.ArrayList;
 import java.util.Arrays;

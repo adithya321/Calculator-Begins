@@ -18,8 +18,8 @@
 
 package com.pimp.calculator;
 
-import com.pimp.calculator.math.Base;
-import com.pimp.calculator.math.Solver;
+import com.xlythe.math.Base;
+import com.xlythe.math.Solver;
 
 import org.javia.arity.SyntaxException;
 

@@ -34,7 +34,7 @@ import com.pimp.calculator.FloatingView.MatrixInverseView;
 import com.pimp.calculator.FloatingView.MatrixTransposeView;
 import com.pimp.calculator.FloatingView.MatrixView;
 import com.pimp.calculator.Page.NormalPanel;
-import com.pimp.calculator.math.Base;
+import com.xlythe.math.Base;
 
 import org.javia.arity.SyntaxException;
 
