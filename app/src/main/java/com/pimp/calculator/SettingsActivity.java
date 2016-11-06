@@ -244,35 +244,6 @@ public class SettingsActivity extends BaseThemedActivity
                 navBarPref.setEnabled(false);
                 navBarPref.setSummary(R.string.not_available_below_lollipop);
             }
-
-            /*final Preference.OnPreferenceClickListener textsizeClickListener = new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    //noinspection ResourceType
-                    TextSizeDialog.show(getActivity(), preference.getKey(), mAteKey, preference.getTitleRes(), true);
-                    return false;
-                }
-            };
-
-            final Preference textsizeHeadline = findPreference("text_size|headline");
-            textsizeHeadline.setOnPreferenceClickListener(textsizeClickListener);
-            textsizeHeadline.setSummary(getString(R.string.headline_textsize_desc,
-                    TextSizeDialog.pxToSp(this, Config.textSizeForMode(getActivity(), mAteKey, Config.TEXTSIZE_HEADLINE))));
-
-            final Preference textsizeTitle = findPreference("text_size|title");
-            textsizeTitle.setOnPreferenceClickListener(textsizeClickListener);
-            textsizeTitle.setSummary(getString(R.string.title_textsize_desc,
-                    TextSizeDialog.pxToSp(this, Config.textSizeForMode(getActivity(), mAteKey, Config.TEXTSIZE_TITLE))));
-
-            final Preference textsizeSubheading = findPreference("text_size|subheading");
-            textsizeSubheading.setOnPreferenceClickListener(textsizeClickListener);
-            textsizeSubheading.setSummary(getString(R.string.subheading_textsize_desc,
-                    TextSizeDialog.pxToSp(this, Config.textSizeForMode(getActivity(), mAteKey, Config.TEXTSIZE_SUBHEADING))));
-
-            final Preference textsizeBody = findPreference("text_size|body");
-            textsizeBody.setOnPreferenceClickListener(textsizeClickListener);
-            textsizeBody.setSummary(getString(R.string.body_textsize_desc,
-                    TextSizeDialog.pxToSp(this, Config.textSizeForMode(getActivity(), mAteKey, Config.TEXTSIZE_BODY))));*/
         }
     }
 }

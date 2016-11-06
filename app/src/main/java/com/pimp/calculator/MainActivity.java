@@ -658,8 +658,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 fav_List_LL = (LinearLayout) findViewById(R.id.conv_fav_layout);
                 favList = (ListView) findViewById(R.id.conv_fav_list);
                 favList.setEmptyView(findViewById(R.id.conv_empty_fav));
-                //hyBtn = (Button) findViewById(R.id.pro_history_Btn);
-                //myBtn = (Button) findViewById(R.id.pro_M_Btn);
                 favBtn = (Button) findViewById(R.id.conv_fav_Btn);
                 break;
             case 2:
@@ -731,7 +729,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createFav();
                 break;
             case R.id.sci_history_Btn:
-                //case R.id.pro_history_Btn:
             case R.id.conv_history_Btn:
             case R.id.curr_history_Btn:
                 dbAdapter = new DbAdapter(this);
@@ -813,11 +810,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 dialog.setContentView(R.layout.dialog_donate);
                 dialog.setTitle("Donate");
 
-                /*SkuDetails coke = bp.getPurchaseListingDetails(SKU_COKE);
-                SkuDetails coffee = bp.getPurchaseListingDetails(SKU_COFFEE);
-                SkuDetails burger = bp.getPurchaseListingDetails(SKU_BURGER);
-                SkuDetails pizza = bp.getPurchaseListingDetails(SKU_PIZZA);
-                SkuDetails meal = bp.getPurchaseListingDetails(SKU_MEAL);*/
                 String[] title = {"Coke", "Coffee", "Burger", "Pizza", "Meal"};
                 String[] price = {"Rs. 10.00", "Rs. 50.00", "Rs. 100.00", "Rs. 500.00", "Rs. 1,000.00"};
 
@@ -898,7 +890,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 createMemory();
                 break;
             case R.id.sci_M_Btn:
-                //case R.id.pro_M_Btn:
             case R.id.curr_M_Btn:
             case R.id.conv_M_Btn:
                 dbAdapter = new DbAdapter(this);
@@ -1247,7 +1238,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     expression_TV.setText("");
                     insert(changeBase(expression, base, Base.HEXADECIMAL));
                     base = Base.HEXADECIMAL;
-                    evaluate(expression);
                 } catch (SyntaxException S) {
                     Toast.makeText(getApplicationContext(), S.toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -1271,12 +1261,8 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     binTV.setBackgroundColor(primary_color);
                     binTV.setTextColor(primary_text_color);
                     expression_TV.setText("");
-                    //TODO:Add OCTAL
-                    /*insert(changeBase(expression, base, Base.OCTAL));
-                    base = Base.OCTAL;*/
-                    insert(changeBase(expression, base, Base.HEXADECIMAL));
-                    base = Base.HEXADECIMAL;
-                    evaluate(expression);
+                    insert(changeBase(expression, base, Base.OCTAL));
+                    base = Base.OCTAL;
                 } catch (SyntaxException S) {
                     Toast.makeText(getApplicationContext(), S.toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -1412,7 +1398,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     done = false;
                 }
             }
-            //}
 
             try {
                 TextView decTV = (TextView) findViewById(R.id.dec_tv);
@@ -1426,7 +1411,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 try {
                     solver.setBase(base);
                     String ans = solver.solve(exp).replace(Constants.MINUS, '-');
-                    //result_TV.setText(ans);
                     decTV.setText(changeBase(ans, base, Base.DECIMAL));
                     hexTV.setText(newBase(decTV.getText().toString(), 10, 16));
                     octTV.setText(newBase(decTV.getText().toString(), 10, 8));
@@ -1437,6 +1421,10 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                         toast.show();
                     }
                     done = false;
+                    Toast toast = Toast.makeText(MainActivity.this, R.toString(), Toast.LENGTH_SHORT);
+                    toast.show();
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 }
             } catch (RuntimeException R) {
                 //
@@ -1466,13 +1454,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                     throw new SyntaxException();
                                 }
                                 break;
-                            /*case OCTAL:
+                            case OCTAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;*/
+                                break;
                             case HEXADECIMAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 16);
@@ -1500,13 +1488,41 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                     throw new SyntaxException();
                                 }
                                 break;
-                            /*case OCTAL:
+                            case OCTAL:
                                 try {
-                                    translatedNumbers[i] = newBase(numbers[i], 2, 8);
+                                    translatedNumbers[i] = newBase(numbers[i], 10, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;*/
+                                break;
+                        }
+                        break;
+                    case OCTAL:
+                        switch (newBase) {
+                            case BINARY:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 2);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case DECIMAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 10);
+                                } catch (NumberFormatException e) {
+                                    Log.e("TAG", numbers[i] + " is not a number", e);
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case HEXADECIMAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 16);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case OCTAL:
+                                break;
                         }
                         break;
                     case HEXADECIMAL:
@@ -1528,13 +1544,13 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                                 break;
                             case HEXADECIMAL:
                                 break;
-                            /*case OCTAL:
+                            case OCTAL:
                                 try {
-                                    translatedNumbers[i] = newBase(numbers[i], 2, 8);
+                                    translatedNumbers[i] = newBase(numbers[i], 16, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
-                                break;*/
+                                break;
                         }
                         break;
                 }
@@ -1563,7 +1579,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     }
 
     private Object[] removeWhitespace(String[] strings) {
-        ArrayList<String> formatted = new ArrayList<String>(strings.length);
+        ArrayList<String> formatted = new ArrayList<>(strings.length);
         for (String s : strings) {
             if (s != null && !s.isEmpty()) formatted.add(s);
         }
