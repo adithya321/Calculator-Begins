@@ -11,6 +11,7 @@ public class Module {
     // Dec looks like 1,234,567. Bin is 1010 1010. Hex is 0F 1F 2F.
     private final int mDecSeparatorDistance = 3;
     private final int mBinSeparatorDistance = 4;
+    private final int mOctSeparatorDistance = 3;
     private final int mHexSeparatorDistance = 2;
 
     Module(Solver solver) {
@@ -23,6 +24,10 @@ public class Module {
 
     public int getBinSeparatorDistance() {
         return mBinSeparatorDistance;
+    }
+
+    public int getOctSeparatorDistance() {
+        return mOctSeparatorDistance;
     }
 
     public int getHexSeparatorDistance() {
@@ -39,6 +44,10 @@ public class Module {
 
     public char getBinSeparator() {
         return Constants.BINARY_SEPARATOR;
+    }
+
+    public char getOctSeparator() {
+        return Constants.OCTAL_SEPARATOR;
     }
 
     public char getHexSeparator() {

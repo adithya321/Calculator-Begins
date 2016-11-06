@@ -1410,7 +1410,7 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                 df.setMaximumFractionDigits(15);
                 try {
                     solver.setBase(base);
-                    String ans = solver.solve(exp).replace(Constants.MINUS, '-');
+                    String ans = solver.solve(exp);
                     decTV.setText(changeBase(ans, base, Base.DECIMAL));
                     hexTV.setText(newBase(decTV.getText().toString(), 10, 16));
                     octTV.setText(newBase(decTV.getText().toString(), 10, 8));
@@ -1421,8 +1421,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                         toast.show();
                     }
                     done = false;
-                    Toast toast = Toast.makeText(MainActivity.this, R.toString(), Toast.LENGTH_SHORT);
-                    toast.show();
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 }

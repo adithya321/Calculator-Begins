@@ -26,6 +26,7 @@ public class Constants {
     public static char DECIMAL_POINT;
     public static char DECIMAL_SEPARATOR;
     public static char BINARY_SEPARATOR;
+    public static char OCTAL_SEPARATOR;
     public static char HEXADECIMAL_SEPARATOR;
     public static char MATRIX_SEPARATOR;
     public static String REGEX_NUMBER;
@@ -49,6 +50,7 @@ public class Constants {
 
         // Use a space for Bin and Hex
         BINARY_SEPARATOR = ' ';
+        OCTAL_SEPARATOR = ' ';
         HEXADECIMAL_SEPARATOR = ' ';
 
         // We have to be careful with the Matrix Separator.
@@ -60,6 +62,7 @@ public class Constants {
                 Pattern.quote(String.valueOf(DECIMAL_POINT)) +
                 Pattern.quote(String.valueOf(DECIMAL_SEPARATOR)) +
                 Pattern.quote(String.valueOf(BINARY_SEPARATOR)) +
+                Pattern.quote(String.valueOf(OCTAL_SEPARATOR)) +
                 Pattern.quote(String.valueOf(HEXADECIMAL_SEPARATOR));
 
         REGEX_NUMBER = "[" + number + "]";

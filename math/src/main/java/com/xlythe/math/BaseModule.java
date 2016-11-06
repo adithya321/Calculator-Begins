@@ -75,6 +75,13 @@ public class BaseModule extends Module {
                         switch (newBase) {
                             case BINARY:
                                 break;
+                            case OCTAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 2, 8);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
                             case DECIMAL:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 2, 10);
@@ -91,11 +98,45 @@ public class BaseModule extends Module {
                                 break;
                         }
                         break;
+                    case OCTAL:
+                        switch (newBase) {
+                            case BINARY:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 2);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case OCTAL:
+                                break;
+                            case DECIMAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 10);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case HEXADECIMAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 8, 16);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                        }
+                        break;
                     case DECIMAL:
                         switch (newBase) {
                             case BINARY:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 10, 2);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case OCTAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 10, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
@@ -116,6 +157,13 @@ public class BaseModule extends Module {
                             case BINARY:
                                 try {
                                     translatedNumbers[i] = newBase(numbers[i], 16, 2);
+                                } catch (NumberFormatException e) {
+                                    throw new SyntaxException();
+                                }
+                                break;
+                            case OCTAL:
+                                try {
+                                    translatedNumbers[i] = newBase(numbers[i], 16, 8);
                                 } catch (NumberFormatException e) {
                                     throw new SyntaxException();
                                 }
@@ -174,6 +222,9 @@ public class BaseModule extends Module {
         switch (base) {
             case 2:
                 wholeNumber = Long.toBinaryString(Long.parseLong(split[0]));
+                break;
+            case 8:
+                wholeNumber = Long.toOctalString(Long.parseLong(split[0]));
                 break;
             case 10:
                 wholeNumber = split[0];
@@ -303,6 +354,8 @@ public class BaseModule extends Module {
                 return getDecSeparator();
             case BINARY:
                 return getBinSeparator();
+            case OCTAL:
+                return getOctSeparator();
             case HEXADECIMAL:
                 return getHexSeparator();
             default:
@@ -320,6 +373,8 @@ public class BaseModule extends Module {
                 return getDecSeparatorDistance();
             case BINARY:
                 return getBinSeparatorDistance();
+            case OCTAL:
+                return getOctSeparatorDistance();
             case HEXADECIMAL:
                 return getHexSeparatorDistance();
             default:
