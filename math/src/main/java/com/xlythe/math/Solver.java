@@ -22,9 +22,8 @@ public class Solver {
     private BaseModule mBaseModule;
     private MatrixModule mMatrixModule;
     private GraphModule mGraphModule;
-    //TODO:mLineLength
-    //private int mLineLength = 15;
-    private int mLineLength = 8;
+    private int mLineLength = 15;
+    //DONE : private int mLineLength = 8;
     private Localizer mLocalizer;
 
     public Solver() {

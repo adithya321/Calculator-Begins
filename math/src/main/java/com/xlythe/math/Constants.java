@@ -13,13 +13,11 @@ public class Constants {
     // Double.toString() for NaN
     public static final String NAN = "NaN";
     public static final char MINUS = '\u2212';
-    //  TODO: MUL
-    //  public static final char MUL = '*';
-    public static final char MUL = '\u00d7';
+    public static final char MUL = '*';
+    //DONE : public static final char MUL = '\u00d7';
     public static final char PLUS = '+';
-    //  TODO: DIV
-    //  public static final char DIV = '/';
-    public static final char DIV = '\u00f7';
+    public static final char DIV = '/';
+    //DONE : public static final char DIV = '\u00f7';
     public static final char POWER_PLACEHOLDER = '\u200B';
     public static final char POWER = '^';
     public static final char EQUAL = '=';

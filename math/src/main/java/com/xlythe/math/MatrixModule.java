@@ -146,8 +146,8 @@ public class MatrixModule extends Module {
         }
 
         // Get percentage.
-        //TODO :    input = input.replaceAll("(?<=\\d)%(?!\\d)", "*0.01");
-        input = input.replaceAll("(?<=\\d)%(?!\\d)", "\u00d70.01");
+        input = input.replaceAll("(?<=\\d)%(?!\\d)", "*0.01");
+        //DONE : input = input.replaceAll("(?<=\\d)%(?!\\d)", "\u00d70.01");
 
         // Might as well get factorial too.
         m = Pattern.compile("(?<!\\.)([0-9]+)\\!").matcher(input);
@@ -206,8 +206,8 @@ public class MatrixModule extends Module {
         // Split into seperate arrays of operators and operands.
         // Operator 0 applies to operands 0 and 1, and so on
 
-        //TODO : String[] parts = input.split("\\*|\\+|(?<=\\d|\\])(?<=\\d|\\])-|/|\\^");
-        String[] parts = input.split("\u00d7|\\+|(?<=\\d|\\])(?<=\\d|\\])-|\u00f7|\\^");
+        String[] parts = input.split("\\*|\\+|(?<=\\d|\\])(?<=\\d|\\])-|/|\\^");
+        //DONE : String[] parts = input.split("\u00d7|\\+|(?<=\\d|\\])(?<=\\d|\\])-|\u00f7|\\^");
         char[] ops = opSplit(input);
 
         // This never changes, so no need to keep calling it
