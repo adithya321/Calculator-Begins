@@ -20,7 +20,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "com.pimp.calculator"
@@ -56,20 +56,14 @@ dependencies {
     compile project(':ate')
     compile files('libs/slider.jar')
 
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-
-    compile 'com.google.android.gms:play-services-analytics:9.8.0'
-    compile 'com.google.android.gms:play-services-appinvite:9.8.0'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
 
     compile('com.mikepenz:aboutlibraries:5.8.5@aar') {
         transitive = true
     }
-    compile 'com.github.Angtrim:Android-Five-Stars-Library:v3.1'
     compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
-    compile 'com.github.javiersantos:AppUpdater:2.4'
     compile 'cat.ereza:customactivityoncrash:1.5.0'
-    compile 'com.anjlab.android.iab.v3:library:1.0.33'
     compile 'com.afollestad.material-dialogs:core:0.9.0.2'
     compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
     compile 'com.balysv:material-ripple:1.0.2'
@@ -82,7 +76,7 @@ dependencies {
     // Android Testing Support Library's runner and rules
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
-    androidTestCompile 'com.android.support:support-annotations:25.0.0'
+    androidTestCompile 'com.android.support:support-annotations:25.1.0'
 
     // Espresso UI Testing
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
@@ -92,5 +86,3 @@ dependencies {
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
     compile 'javax.inject:javax.inject:1'
 }
-
-apply plugin: 'com.google.gms.google-services'

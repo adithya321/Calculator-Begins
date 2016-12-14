@@ -19,12 +19,9 @@
 package com.pimp.calculator;
 
 import android.annotation.TargetApi;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -37,7 +34,6 @@ import android.provider.Settings;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -55,12 +51,6 @@ import android.widget.Toast;
 
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.Config;
-import com.anjlab.android.iab.v3.BillingProcessor;
-import com.anjlab.android.iab.v3.TransactionDetails;
-import com.github.javiersantos.appupdater.AppUpdater;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.aboutlibraries.LibsConfiguration;
@@ -75,9 +65,7 @@ import com.pimp.calculator.fragments.ExtrasFragment;
 import com.pimp.calculator.fragments.ProgrammerFragment;
 import com.pimp.calculator.fragments.StandardFragment;
 import com.pimp.calculator.fragments.UnitsFragment;
-import com.pimp.calculator.util.AnalyticsApplication;
 import com.pimp.calculator.util.AutoResizeTextView;
-import com.pimp.calculator.util.CustomAdapter;
 import com.pimp.calculator.util.PagesBuilder;
 import com.pimp.calculator.util.ZoomOutPageTransformer;
 import com.xlythe.math.Base;
@@ -94,13 +82,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-import angtrim.com.fivestarslibrary.FiveStarsDialog;
-import angtrim.com.fivestarslibrary.NegativeReviewListener;
-import angtrim.com.fivestarslibrary.ReviewListener;
 import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 
-public class MainActivity extends BaseThemedActivity implements SharedPreferences.OnSharedPreferenceChangeListener,
-        NegativeReviewListener, ReviewListener, BillingProcessor.IBillingHandler {
+public class MainActivity extends BaseThemedActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static final char SELECTION_HANDLE = '\u2620';
     final double[][] areaValues = {{1000000.0, 0.000001}, {1.0, 1.0}, {0.0001, 10000.0}, {10000.0, 0.0001},
@@ -228,7 +212,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     private final String REGEX_NUMBER = Constants.REGEX_NUMBER.substring(0, Constants.REGEX_NUMBER.length() - 1) + SELECTION_HANDLE + "]";
     private final String REGEX_NOT_NUMBER = Constants.REGEX_NOT_NUMBER.substring(0, Constants.REGEX_NOT_NUMBER.length() - 1) + SELECTION_HANDLE + "]";
     public boolean flag;
-    BillingProcessor bp;
     int page_no;
     Button hyBtn, myBtn, favBtn;
     ListView historyList, memoryList, favList;
@@ -310,57 +293,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     private DecimalFormat formatter = new DecimalFormat();
     private DecimalFormatSymbols symbols;
     private Base base = Base.DECIMAL;
-    private Tracker mTracker;
-
-    @Override
-    public void onNegativeReview(int stars) {
-        StringBuilder emailBuilder = new StringBuilder();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:pimplay69@gmail.com"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " : " + getResources().getString(R.string.app_name));
-
-        emailBuilder.append("\n \n \nOS Version: ").append(System.getProperty("os.version")).append("(").append(Build.VERSION.INCREMENTAL).append(")");
-        emailBuilder.append("\nOS API Level: ").append(Build.VERSION.SDK_INT);
-        emailBuilder.append("\nDevice: ").append(Build.DEVICE);
-        emailBuilder.append("\nManufacturer: ").append(Build.MANUFACTURER);
-        emailBuilder.append("\nModel (and Product): ").append(Build.MODEL).append(" (").append(Build.PRODUCT).append(")");
-        PackageInfo appInfo = null;
-        try {
-            appInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        assert appInfo != null;
-        emailBuilder.append("\nApp Version Name: ").append(appInfo.versionName);
-        emailBuilder.append("\nApp Version Code: ").append(appInfo.versionCode);
-
-        intent.putExtra(Intent.EXTRA_TEXT, emailBuilder.toString());
-        startActivity(Intent.createChooser(intent, "Send via"));
-    }
-
-    @Override
-    public void onReview(int stars) {
-    }
-
-    @Override
-    public void onBillingInitialized() {
-    }
-
-    @Override
-    public void onProductPurchased(String productId, TransactionDetails details) {
-        bp.consumePurchase(productId);
-    }
-
-    @Override
-    public void onBillingError(int errorCode, Throwable error) {
-        AlertDialog.Builder bld = new AlertDialog.Builder(this);
-        bld.setMessage("Error purchasing");
-        bld.setNeutralButton("OK", null);
-        bld.create().show();
-    }
-
-    @Override
-    public void onPurchaseHistoryRestored() {
-    }
 
     private void addTab(Drawable icon) {
         assert mTabs != null;
@@ -397,22 +329,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
         sec_text_color = Config.textColorSecondary(this, getATEKey());
 
         setContentView(R.layout.activity_main);
-
-        bp = new BillingProcessor(this, getString(R.string.base64), this);
-
-        FiveStarsDialog fiveStarsDialog = new FiveStarsDialog(this, "pimplay69@gmail.com");
-        fiveStarsDialog.setTitle(getString(R.string.rate_dialog_title))
-                .setRateText(getString(R.string.rate_dialog_text))
-                .setForceMode(false)
-                .setUpperBound(4)
-                .setNegativeReviewListener(this)
-                .showAfter(10);
-
-        AppUpdater appUpdater = new AppUpdater(this);
-        appUpdater.start();
-
-        AnalyticsApplication application = (AnalyticsApplication) getApplication();
-        mTracker = application.getDefaultTracker();
 
         mTabs = (TabLayout) findViewById(R.id.tabs);
         mPager = (ViewPager) findViewById(R.id.pager);
@@ -468,8 +384,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     default:
                         name = "Calculator Begins";
                 }
-                mTracker.setScreenName("Screen~" + name);
-                mTracker.send(new HitBuilders.ScreenViewBuilder().build());
             }
 
             @Override
@@ -526,17 +440,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (!bp.handleActivityResult(requestCode, resultCode, data))
-            super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_INVITE) {
-            if (resultCode != -1) {
-                Toast.makeText(MainActivity.this, getString(R.string.send_failed), Toast.LENGTH_LONG).show();
-            }
-        }
     }
 
     public void BtnClick(final View v) {
@@ -788,58 +691,10 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
             case R.id.settings:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
-            case R.id.share:
-                Intent i = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
-                        .setMessage(getString(R.string.invitation_message))
-                        .setCallToActionText(getString(R.string.invitation_cta))
-                        .build();
-                startActivityForResult(i, REQUEST_INVITE);
-                break;
             case R.id.report:
                 Intent report = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://github.com/adithya321/Calculator-Begins/issues"));
                 startActivity(report);
-                break;
-            case R.id.support:
-                Toast.makeText(MainActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
-
-                final String SKU_COKE = "cb_coke", SKU_COFFEE = "cb_coffee", SKU_BURGER = "cb_burger",
-                        SKU_PIZZA = "cb_pizza", SKU_MEAL = "cb_meal";
-
-                final Dialog dialog = new Dialog(MainActivity.this);
-                dialog.setContentView(R.layout.dialog_donate);
-                dialog.setTitle("Donate");
-
-                String[] title = {"Coke", "Coffee", "Burger", "Pizza", "Meal"};
-                String[] price = {"Rs. 10.00", "Rs. 50.00", "Rs. 100.00", "Rs. 500.00", "Rs. 1,000.00"};
-
-
-                ListView listView = (ListView) dialog.findViewById(R.id.list);
-                listView.setAdapter(new CustomAdapter(MainActivity.this, title, price));
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        switch (position) {
-                            case 0:
-                                bp.purchase(MainActivity.this, SKU_COKE);
-                                break;
-                            case 1:
-                                bp.purchase(MainActivity.this, SKU_COFFEE);
-                                break;
-                            case 2:
-                                bp.purchase(MainActivity.this, SKU_BURGER);
-                                break;
-                            case 3:
-                                bp.purchase(MainActivity.this, SKU_PIZZA);
-                                break;
-                            case 4:
-                                bp.purchase(MainActivity.this, SKU_MEAL);
-                                break;
-                        }
-                    }
-                });
-
-                dialog.show();
                 break;
             case R.id.about:
                 new LibsBuilder()
@@ -1980,8 +1835,6 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
 
     @Override
     protected void onDestroy() {
-        if (bp != null)
-            bp.release();
         mPrefs.unregisterOnSharedPreferenceChangeListener(this);
         super.onDestroy();
     }
