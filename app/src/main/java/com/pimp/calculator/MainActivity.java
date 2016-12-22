@@ -1272,12 +1272,11 @@ public class MainActivity extends BaseThemedActivity implements SharedPreference
                     binTV.setText(newBase(decTV.getText().toString(), 10, 2));
                 } catch (SyntaxException R) {
                     if (done) {
-                        Toast toast = Toast.makeText(MainActivity.this, R.toString(), Toast.LENGTH_SHORT);
-                        toast.show();
+                        Toast.makeText(MainActivity.this, R.toString(), Toast.LENGTH_SHORT).show();
                     }
                     done = false;
                 } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 }
             } catch (RuntimeException R) {
                 //
