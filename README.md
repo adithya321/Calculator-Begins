@@ -6,11 +6,9 @@
 
 ## Third Party Libraries
 * [AboutLibraries](https://github.com/mikepenz/AboutLibraries)
-* [Android Five Stars Library](https://github.com/Angtrim/Android-Five-Stars-Library)
 * [Android-Iconics](https://github.com/mikepenz/Android-Iconics)
-* [Android In-App Billing v3 Library](https://github.com/anjlab/android-inapp-billing-v3)
 * [App Theme Engine](https://github.com/afollestad/app-theme-engine)
-* [AppUpdater](https://github.com/javiersantos/AppUpdater)
+* [Arity](https://github.com/Xlythe/Arity)
 * [Custom Activity On Crash](https://github.com/Ereza/CustomActivityOnCrash)
 * [Material Dialogs](https://github.com/afollestad/material-dialogs)
 * [Material Ripple Layout](https://github.com/balysv/material-ripple)
